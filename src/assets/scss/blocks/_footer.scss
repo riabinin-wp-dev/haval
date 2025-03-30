@@ -1,0 +1,161 @@
+.footer {
+    position: relative;
+
+    & .container {
+        padding: 60px 0 35px;
+    }
+}
+
+.footer_bg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.footer_to_top {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+}
+
+.footer_top {
+    display: flex;
+    gap: 57px;
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    & li {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #121314;
+    }
+}
+
+.footer_center {
+    display: flex;
+    gap: 20px;
+
+    & ul {
+        padding-left: 0;
+        gap: 0;
+    }
+}
+
+.footer_phone {
+    & a {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #121314;
+    }
+}
+
+.footer_menu {
+    margin-left: 60px;
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 20px !important;
+    column-gap: 40px !important;
+
+    & a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #626970;
+    }
+}
+
+.footer_medium {
+    margin-top: 37px;
+    display: grid;
+    grid-template-columns: 305px 1fr;
+    gap: 96px;
+
+    & p {
+        margin: 0;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #626970;
+        opacity: 0.5;
+    }
+}
+
+.footer_logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    & span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #02204f;
+        opacity: 0.5;
+    }
+}
+
+.footer_bottom {
+    margin-top: 27px;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+
+    & small, & a{
+        flex-basis: calc(33.3%);
+    }
+
+    & a{
+        display: block;
+        margin: 0 auto;
+    }
+
+    & small {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #626970;
+        opacity: 0.5;
+
+        &:first-child{
+            padding-left: 15px;
+        }
+
+        &:last-child{
+            display: block;
+            margin-left: auto;
+        }
+
+        & span {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer_botom_politics {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #626970;
+    opacity: 0.5;
+}

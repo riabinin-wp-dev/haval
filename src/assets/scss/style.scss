@@ -1,0 +1,32 @@
+// @use  'vendor/reset';
+@use 'blocks/vars'as *;
+// @use  "./vendor/animate";
+@use 'fonts'as *;
+@use 'settings'as *;
+@use 'blocks/container'as *;
+@use 'blocks/page'as *;
+@use 'blocks/header'as *;
+@use 'blocks/hero'as *;
+@use 'blocks/models'as *;
+@use 'blocks/timer'as *;
+@use 'blocks/benefits'as *;
+@use 'blocks/tradein'as *;
+@use 'blocks/aproove'as *;
+@use 'blocks/quality'as *;
+@use 'blocks/special'as *;
+@use 'blocks/map'as *;
+@use 'blocks/disklaimer'as *;
+@use 'blocks/footer'as *;
+// @use '../../../node_modules/swiper/swiper-bundle.min.css'as *;
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+}
+.main {
+  height: 100%;
+  flex: 1 0 auto;
+}

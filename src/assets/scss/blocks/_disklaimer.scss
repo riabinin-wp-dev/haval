@@ -1,0 +1,80 @@
+.disklaimer {}
+
+.disklaimer_title {
+    display: flex;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 145%;
+    letter-spacing: -0.01em;
+    color: #626970;
+    align-items: center;
+    gap: 6px;
+}
+
+.disklaimer_title svg {
+    transition: transform 0.3s ease;
+}
+
+.disklaimer_title svg {
+    transition: transform 0.3s ease;
+}
+
+.accordion_content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    & p {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #626970;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+}
+
+.accordion_content ol {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+
+    & li{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #626970;
+    }
+
+    & p {
+        padding: 0px 0px 10px 0px;
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #626970;
+    }
+
+    & li+li {
+        margin-top: 10px;
+    }
+}
+
+/* Стили для открытого состояния */
+.accordion.active .disklaimer_title svg {
+    transform: rotate(180deg);
+}
+
+.accordion.active .accordion_content {
+    max-height: 1000px;
+    /* Большое значение для вмещения контента */
+    padding-bottom: 15px;
+
+}

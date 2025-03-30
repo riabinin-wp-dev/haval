@@ -1,0 +1,83 @@
+.tradein {
+    & .grid-row {
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 130px;
+    }
+
+    & .project_title {
+        margin-bottom: 36px;
+    }
+}
+
+.tradein_desc {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 115%;
+    color: #1d1f20;
+    margin: 0;
+    margin-bottom: 22px;
+}
+
+.tradein_form {
+    & .flex-column {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    & span,
+    & input,
+    & label,
+    & select {
+        width: 100%;
+    }
+
+    & .project_input {
+        font-size: 15px;
+
+        &::placeholder {
+            color: rgba(98, 105, 112, 0.4);
+        }
+    }
+
+    & .timer_inner_form_wrapper {
+        justify-content: center;
+    }
+}
+
+.tradein_right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.tadein_right_background {
+    border-radius: 12px;
+    width: 572px;
+    height: 366px;
+    background: #626970;
+    position: relative;
+    padding: 32px;
+    margin-top: 97px;
+
+    & img {
+        width: 100vw;
+        max-width: 614px;
+        position: absolute;
+        left: 23px;
+        bottom: -62px;
+        z-index: 1;
+    }
+}
+
+.tradein_right_desc {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    z-index: 1;
+}

@@ -1,0 +1,40 @@
+.aproove {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    & .project_title {
+        color: #fff;
+        margin-bottom: 14px;
+
+        & span {
+            color: var(--accent-color);
+        }
+    }
+
+    & .project_more{
+        width: 370px;
+        height: 51px;
+        & svg{
+        }
+    }
+
+    & small {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 115%;
+        color: #fff;
+        display: block;
+        margin-bottom: 32px;
+    }
+}
+
+.aproove_inner {
+    min-height: 874px;
+    height: 100%;
+    padding: 55px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

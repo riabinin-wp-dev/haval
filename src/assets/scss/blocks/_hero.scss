@@ -1,0 +1,78 @@
+@use "../functions" as *;
+
+.hero {
+    position: relative;
+
+    & .embla__slide {
+        width: 1366px;
+        height: 688px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    & .embla__controls {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    & .embla__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .embla__button {
+        border-radius: 4px 0 0 4px;
+        width: 32px;
+        height: 76px;
+        background: rgba(29, 31, 32, 0.3);
+        border: none;
+        cursor: pointer;
+
+        & svg{
+            width: 15px;
+            height: 28px;
+
+            & path{
+                fill: white;
+            }
+        }
+        // transform: rotate(-180deg);
+    }
+}
+
+// height: vw(688px, $desktop);
+// width: vw(1366px, $desktop);
+
+.hero_title {
+    margin: 0;
+    padding-top: 60px;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 115%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.hero_desc {
+    font-weight: 500;
+    font-size: 48px;
+    color: #fff;
+    display: block;
+}
+
+.hero_action {
+    font-weight: 500;
+    font-size: 24px;
+    display: block;
+    color: #fff;
+}
