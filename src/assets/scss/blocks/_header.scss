@@ -1,5 +1,16 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .header {
     padding: 17px 0;
+
+    @include haval-desc {
+        padding: vw(17px, $desktop) 0;
+    }
+
+    @include tablet {
+        padding: vw(12px, $tablet) 0;
+    }
 }
 
 .header_inner {
@@ -7,6 +18,16 @@
     gap: 20px;
     align-items: center;
     justify-content: space-between;
+
+    @include haval-desc {
+        gap: vw(20px, $desktop);
+    }
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(12px, $tablet);
+    }
 }
 
 .header_left {
@@ -18,8 +39,34 @@
     line-height: 145%;
     letter-spacing: -0.01em;
     color: #02204f;
+
+    @include haval-desc {
+        gap: vw(4px, $desktop);
+        font-size: vw(14px, $desktop);
+    }
+
+    @include tablet {
+        gap: vw(4px, $tablet);
+        font-size: vw(14px, $tablet);
+    }
+
+    & svg {
+        width: 118px;
+        height: 14px;
+
+        @include haval-desc {
+            width: vw(118px, $desktop);
+            height: vw(14px, $desktop);
+        }
+
+        @include tablet {
+            width: vw(118px, $tablet);
+            height: vw(14px, $tablet);
+        }
+    }
 }
-.header_center{
+
+.header_center {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr 1fr;
@@ -27,19 +74,69 @@
     gap: 4px;
     column-gap: 30px;
 
-    & .--info{
+    @include haval-desc {
+        gap: vw(4px, $desktop);
+        column-gap: vw(30px, $desktop);
+    }
+
+    @include tablet {
+        order: 10;
+        grid-column: 2 span;
+        display: flex;
+        justify-content: space-between;
+        gap: vw(8px, $tablet);
+    }
+
+    & .--info {
         display: grid;
         grid-template-columns: 12px 1fr;
         align-items: center;
         gap: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        color: #1d1f20;
 
-        & img{
+        @include haval-desc {
+            grid-template-columns: vw(12px, $desktop) 1fr;
+            gap: vw(8px, $desktop);
+            font-size: vw(14px, $desktop);
+        }
+
+        @include tablet {
+            grid-template-columns: vw(12px, $tablet) 1fr;
+            gap: vw(8px, $tablet);
+            font-size: vw(14px, $tablet);
+        }
+
+        & img,
+        & svg {
             width: 12px;
             height: 12px;
+            flex-shrink: 0;
+
+            @include haval-desc {
+                width: vw(12px, $desktop);
+                height: vw(12px, $desktop);
+            }
+
+            @include tablet {
+                width: vw(12px, $tablet);
+                height: vw(12px, $tablet);
+            }
         }
     }
 }
-.header_center_map{
+
+.header_center_map {
     grid-row: 2 span;
     grid-column: 2;
+}
+
+.header_right{
+    @include tablet{
+        display: flex;
+        justify-content: flex-end;
+    }
 }

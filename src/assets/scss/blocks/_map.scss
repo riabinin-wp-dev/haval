@@ -1,9 +1,19 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 #map {
     width: 1174px !important;
     height: 615px !important;
     border: 1px solid rgba(98, 105, 112, 0.2);
     border-radius: 12px;
     overflow: hidden;
+
+    @include haval-desc {
+        border-radius: vw(12px, $desktop);
+        border-width: vw(1px, $desktop);
+        width: var(--content-width) !important;
+        height: vw(615px, $desktop) !important;
+    }
 }
 
 .map {
@@ -23,11 +33,24 @@
     background: #fff;
     padding: 40px;
 
+    @include haval-desc {
+        border-radius: vw(12px, $desktop);
+        border-width: vw(1px, $desktop);
+        padding: vw(40px, $desktop);
+        bottom: vw(50px, $desktop);
+        right: vw(100px, $desktop);
+    }
+
     & dl {
         display: flex;
         gap: 5px;
         margin-bottom: 16px;
         align-items: center;
+
+        @include haval-desc {
+            gap: vw(5px, $desktop);
+            margin-bottom: vw(16px, $desktop);
+        }
 
         & dt {
             flex-shrink: 0;
@@ -38,6 +61,11 @@
             & svg {
                 width: 14px;
                 height: 15px;
+
+                @include haval-desc {
+                    width: vw(14px, $desktop);
+                    height: vw(15px, $desktop);
+                }
             }
         }
 
@@ -48,6 +76,10 @@
             line-height: 145%;
             letter-spacing: -0.01em;
             color: #121314;
+
+            @include haval-desc {
+                font-size: vw(12px, $desktop);
+            }
         }
     }
 
@@ -56,6 +88,11 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         margin-bottom: 47px;
+
+        @include haval-desc {
+            gap: vw(10px, $desktop);
+            margin-bottom: vw(47px, $desktop);
+        }
     }
 
     & .project_link {
@@ -64,6 +101,10 @@
 
         &+.project_link {
             margin-top: 16px;
+
+            @include haval-desc {
+                margin-top: vw(16px, $desktop);
+            }
         }
     }
 
@@ -78,6 +119,11 @@
     text-transform: uppercase;
     color: #121314;
     margin-bottom: 4px;
+
+    @include haval-desc {
+        font-size: vw(24px, $desktop);
+        margin-bottom: vw(4px, $desktop);
+    }
 }
 
 .map_info_desc {
@@ -88,6 +134,11 @@
     letter-spacing: -0.01em;
     color: #121314;
     margin: 0 0 24px;
+
+    @include haval-desc {
+        font-size: vw(16px, $desktop);
+        margin-bottom: vw(24px, $desktop);
+    }
 }
 
 .map_info_item_title{
@@ -96,6 +147,12 @@
     align-items: center;
     margin-bottom: 8px;
 
+    @include haval-desc {
+        gap: vw(8px, $desktop);
+        margin-bottom: vw(8px, $desktop);
+    }
+
+
     & span{
         color: #626970;
     }
@@ -103,5 +160,9 @@
 .map_info_item{
     & ul{
         padding-left: 22px;
+
+        @include haval-desc {
+            padding-left: vw(22px, $desktop);
+        }
     }
 }

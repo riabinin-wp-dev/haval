@@ -1,10 +1,16 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .special {
 
     & .project_title {
         margin-bottom: 28px;
         color: #fff;
         letter-spacing: -0.03px;
-        font-family: var(--font-family);
+
+        @include haval-desc {
+            margin-bottom: vw(28px, $desktop);
+        }
     }
 }
 
@@ -12,6 +18,11 @@
     padding: 43px 70px;
     border-radius: 12px;
     background: #121314;
+
+    @include haval-desc {
+        padding-bottom:  vw(43px, $desktop) vw(70px, $desktop);
+        border-radius:  vw(12px, $desktop);
+    }
 }
 
 .special_inner {
@@ -19,11 +30,21 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 
+    @include haval-desc {
+        gap: vw(20px, $desktop);
+    }
+
     & .img-wrap {
         & img {
             border-radius: 12px;
             width: 502px;
             height: 417px;
+
+            @include haval-desc {
+                border-radius: vw(12px, $desktop);
+                width: vw(502px, $desktop);
+                height: vw(417px, $desktop);
+            }
         }
     }
 }
@@ -39,8 +60,17 @@
         color: #fff;
         max-width: 423px;
 
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+            max-width: vw(423px, $desktop);
+        }
+
         &+p {
             margin-top: 15px;
+
+            @include haval-desc {
+                margin-top: vw(15px, $desktop);
+            }
         }
     }
 }
@@ -51,6 +81,11 @@
     flex-direction: column;
     gap: 16px;
     max-width: 361px;
+
+    @include haval-desc {
+        gap: vw(16px, $desktop);
+        max-width: vw(361px, $desktop);
+    }
 
 
     & span,
@@ -71,6 +106,10 @@
         font-weight: 500;
         line-height: 125%;
         color: #bdc3c6;
+
+        @include haval-desc {
+            font-size:  vw(12px, $desktop);
+        }
     }
 
     & small {
@@ -82,5 +121,10 @@
         opacity: 0.5;
         display: block;
         margin-top: 10px;
+
+        @include haval-desc {
+            font-size: vw(12px, $desktop);
+            margin-top: vw(10px, $desktop);
+        }
     }
 }

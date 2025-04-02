@@ -1,7 +1,19 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .container{
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 30px;
+
+
+    @include haval-desc{
+        padding: 0 vw(96px , $desktop);
+    }
+    
+    @include for-desktop{
+        padding: 0 vw(40px , $desktop);
+    }
 }
 

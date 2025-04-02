@@ -1,13 +1,18 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .timer {
     position: absolute;
     top: -157px;
     left: 0;
     right: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
     z-index: 2;
     width: 100%;
-    // background-image: url('data:image/svg+xml,%3Csvg%20width%3D%221174%22%20height%3D%22308%22%20viewBox%3D%220%200%201174%20308%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M80%200C68.9543%200%2060%208.9543%2060%2020V57C60%2062.5228%2055.5228%2067%2050%2067H20C8.9543%2067%200%2075.9543%200%2087V288C0%20299.046%208.95431%20308%2020%20308H1154C1165.05%20308%201174%20299.046%201174%20288V87C1174%2075.9543%201165.05%2067%201154%2067H1124C1118.48%2067%201114%2062.5229%201114%2057V20C1114%208.95431%201105.05%200%201094%200H80Z%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E');
+
+    @include haval-desc{
+        top: vw(-157px, $desktop);
+    }
+
     & .project_title {
         font-family: var(--second-family);
         font-weight: 500;
@@ -16,6 +21,11 @@
         text-align: center;
         color: var(--accent-color);
         margin: 0 0 48px;
+
+        @include haval-desc{
+            font-size: vw(34px, $desktop);
+            margin-bottom: vw(48px, $desktop);
+        }
     }
 }
 
@@ -29,10 +39,21 @@
     max-width: max-content;
     min-width: 1078px;
 
+    @include haval-desc{
+        padding: vw(18px, $desktop) 0;
+        margin-bottom: vw(27px, $desktop);
+        min-width: vw(1078px, $desktop);
+    }
+
     & .grid-row {
         grid-template-columns: 115px 1fr;
         gap: 32px;
         align-items: center;
+
+        @include haval-desc{
+            grid-template-columns: vw(115px, $desktop) 1fr;
+            gap: vw(32px, $desktop);
+        }
     }
 }
 
@@ -43,6 +64,10 @@
     line-height: 115%;
     text-align: center;
     color: #121314;
+
+    @include haval-desc{
+        font-size: vw(24px, $desktop);
+    }
 }
 
 .timer_inner_count {
@@ -53,20 +78,33 @@
     border: 1px solid rgba(189, 195, 198, 0.7);
     border-radius: 4px;
 
+    @include haval-desc{
+        padding: vw(13px, $desktop) vw(87px, $desktop);
+        gap: vw(30px, $desktop);
+        border-radius: vw(4px, $desktop);
+        border: vw(1px, $desktop) solid rgba(189, 195, 198, 0.7);
+    }
+
     & strong {
-        font-family: var(--font-family);
         font-weight: 700;
         font-size: 24px;
         line-height: 115%;
         color: #121314;
+
+        @include haval-desc{
+            font-size: vw(24px, $desktop);
+        }
     }
 
     & span {
-        font-family: var(--font-family);
         font-weight: 500;
         font-size: 24px;
         line-height: 115%;
         color: #121314;
+
+        @include haval-desc{
+            font-size: vw(24px, $desktop);
+        }
     }
 
     & .line {
@@ -75,6 +113,11 @@
         width: 100%;
         height: 1px;
         flex-grow: 1;
+
+        @include haval-desc{
+            border: vw(1px, $desktop) solid #bdc3c6;
+            height: vw(1px, $desktop);
+        }
     }
 }
 .timer_inner{
@@ -85,11 +128,20 @@
 .timer_inner_form {
     padding: 0 61px;
 
+    @include haval-desc{
+        padding: 0 vw(61px, $desktop);
+    }
+
     & .flex-row.--inputs {
         display: flex;
         align-items: center;
         gap: 40px;
         margin-bottom: 13px;
+
+        @include haval-desc{
+            gap: vw(40px, $desktop);
+            margin-bottom: vw(13px, $desktop);
+        }
     }
 
     & .flex-row.--agreement {
@@ -108,6 +160,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    @include haval-desc{
+        gap: vw(8px, $desktop);
+    }
 }
 
 .timer_inner_form_agreement {
@@ -117,6 +173,10 @@
     line-height: 125%;
     letter-spacing: -0.01em;
     color: #bdc3c6;
+
+    @include haval-desc{
+        font-size: vw(12px, $desktop);
+    }
     
     & a{
         text-decoration: underline;
@@ -130,6 +190,12 @@
     right: 6px;
     z-index: 1;
     left: 6px;
+
+    @include haval-desc{
+        transform: translateY(vw(20px, $desktop));
+        right: vw(6px, $desktop);
+        left: vw(6px, $desktop);
+    }
     
     & svg{
         background-color: #fff;
@@ -140,5 +206,16 @@
         // width: 1174px;
         z-index: 2;
         width: calc(100% - 12px);
+
+        @include haval-desc{
+            width: vw(1175px, $desktop);
+            border-radius: vw(24px, $desktop);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include for-desktop{
+            width: calc(100% - vw(100px, $desktop));
+        }
     }
 }

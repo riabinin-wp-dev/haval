@@ -1,4 +1,5 @@
 @use "../functions" as *;
+@use "../mixins/breakpoint" as *;
 
 .hero {
     position: relative;
@@ -9,6 +10,16 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include haval-desc {
+            width: vw(1366px, $desktop);
+            height: vw(688px, $desktop);
+        }
+
+        @include tablet {
+            width: vw(768px, $tablet);
+            height: vw(540px, $tablet);
+        }
     }
 
     & .embla__controls {
@@ -36,14 +47,30 @@
         border: none;
         cursor: pointer;
 
-        & svg{
+        @include haval-desc {
+            width: vw(32px, $desktop);
+            height: vw(76px, $desktop);
+            border-radius: vw(4px, $desktop) 0 0 vw(4px, $desktop);
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        & svg {
             width: 15px;
             height: 28px;
 
-            & path{
+            @include haval-desc {
+                width: vw(15px, $desktop);
+                height: vw(28px, $desktop);
+            }
+
+            & path {
                 fill: white;
             }
         }
+
         // transform: rotate(-180deg);
     }
 }
@@ -61,6 +88,18 @@
     text-transform: uppercase;
     color: #fff;
     margin-bottom: 10px;
+
+    @include haval-desc {
+        padding-top: vw(60px, $desktop);
+        font-size: vw(54px, $desktop);
+        margin-bottom: vw(10px, $desktop);
+    }
+
+    @include tablet{
+        padding-top: vw(40px, $tablet);
+        font-size: vw(40px, $tablet);
+        margin-bottom: 0;
+    }
 }
 
 .hero_desc {
@@ -68,6 +107,20 @@
     font-size: 48px;
     color: #fff;
     display: block;
+
+    @include haval-desc {
+        font-size: vw(48px, $desktop);
+    }
+
+    @include tablet{
+        font-size: vw(32px, $tablet);
+    }
+
+    & +.hero_action{
+        @include tablet{
+            margin-top: vw(8px , $tablet);
+        }
+    }
 }
 
 .hero_action {
@@ -75,4 +128,14 @@
     font-size: 24px;
     display: block;
     color: #fff;
+
+    @include haval-desc {
+        font-size: vw(24px, $desktop);
+    }
+     @include tablet {
+        font-size: vw(20px, $tablet);
+        margin: 0;
+        margin-bottom: vw(20px, $tablet);
+
+    }
 }

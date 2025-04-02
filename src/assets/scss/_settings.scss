@@ -1,3 +1,6 @@
+@use "./functions" as *;
+@use "./mixins/breakpoint" as *;
+
 *,
 *::before,
 *::after {
@@ -55,6 +58,18 @@ a {
   white-space: nowrap;
   transition: all 0.3s linear;
 
+  @include haval-desc {
+    border-radius: vw(2px, $desktop);
+    padding: vw(8px, $desktop) vw(27px, $desktop);
+    font-size: vw(16px, $desktop);
+  }
+
+  @include tablet{
+    border-radius: vw(2px, $tablet);
+    padding: vw(6px, $tablet) vw(8px, $tablet);
+    font-size: vw(12px, $tablet);
+  }
+
   @media (hover: hover) {
     &:hover {
       box-shadow: 0 0 20px 0 rgba(0, 202, 191, 0.4);
@@ -73,6 +88,11 @@ a {
     font-weight: 500;
     font-size: 16px;
 
+    @include haval-desc {
+      font-size: vw(16px, $desktop);
+      border-width: vw(1px, $desktop);
+    }
+
     @media (hover: hover) {
       &:hover {
         box-shadow: none;
@@ -82,24 +102,29 @@ a {
     }
   }
 
-  &.--create{
+  &.--create {
     gap: 16px;
 
-    & path{
+    @include haval-desc {
+      gap: vw(16px, $desktop);
+    }
+
+    & path {
       transition: all 0.3s linear;
     }
 
-    &::before{
+    &::before {
       display: none !important;
     }
 
     @media (hover: hover) {
-      &:hover{
+      &:hover {
         box-shadow: none;
         color: var(--accent-color);
         border-color: var(--accent-color);
       }
-      &:hover path{
+
+      &:hover path {
         stroke: var(--accent-color);
       }
     }
@@ -117,6 +142,11 @@ a {
     background-color: transparent;
     border-color: gba(98, 105, 112, 0.5);
 
+    @include haval-desc {
+      font-size: vw(16px, $desktop);
+      border-width: vw(1px, $desktop);
+    }
+
     &::before {
       width: 9.5px;
       height: 6.5px;
@@ -132,6 +162,10 @@ a {
       transform: translateY(-50%);
       z-index: 1;
 
+      @include haval-desc {
+        width: vw(9.5px, $desktop);
+        height: vw(6.5px, $desktop);
+      }
     }
 
   }
@@ -147,6 +181,11 @@ a {
     background-color: transparent;
     border-color: gba(98, 105, 112, 0.5);
     opacity: 0.5;
+
+    @include haval-desc {
+      font-size: vw(30px, $desktop);
+      border-width: vw(1px, $desktop);
+    }
   }
 }
 
@@ -166,6 +205,10 @@ a {
 .section {
   max-width: 1366px;
   margin: 0 auto;
+
+  @include haval-desc {
+    max-width: vw(1366px, $desktop);
+  }
 }
 
 .project_more {
@@ -184,6 +227,18 @@ a {
   white-space: nowrap;
   cursor: pointer;
 
+  @include haval-desc {
+    font-size: vw(19px, $desktop);
+    width: vw(240px, $desktop);
+    height: vw(51px, $desktop);
+  }
+
+  @include tablet{
+    font-size: vw(17px, $tablet);
+    width: vw(240px, $tablet);
+    height: vw(51px, $tablet);
+  }
+
   & svg {
     width: 100%;
     height: 100%;
@@ -192,8 +247,25 @@ a {
     left: 50%;
     z-index: -1;
     transform: translate3d(-50%, -50%, 0);
+
   }
 
+  & path{
+    transition: all 0.3s linear;
+  }
+  
+  @media(hover:hover){
+    &:hover{
+      & path{
+        fill: #00CABF;
+      }
+    }
+  }
+  &::visited{
+    & path{
+      fill: #09bab0;
+    }
+  }
   // background-size: contain;
   // background-repeat: no-repeat;
   // background-position: center;
@@ -208,6 +280,11 @@ a {
   color: #1d1f20;
   margin: 0;
   margin-bottom: 36px;
+
+  @include haval-desc {
+    font-size: vw(48px, $desktop);
+    margin-bottom: vw(36px, $desktop);
+  }
 }
 
 .models_more {
@@ -223,6 +300,14 @@ a {
   margin: 30px auto 0;
   padding: 6px 63px;
   background-color: transparent;
+
+
+  @include haval-desc {
+    margin-top: vw(30px, $desktop);
+    border-width: vw(1px, $desktop);
+    font-size: vw(16px, $desktop);
+    padding: vw(6px, $desktop) vw(63px, $desktop);
+  }
 }
 
 .project_input {
@@ -238,9 +323,20 @@ a {
   color: #bdc3c6;
   transition: all 0.3s linear;
 
+  @include haval-desc {
+    border-width: vw(1px, $desktop);
+    border-radius: vw(2px, $desktop);
+    padding: vw(8px, $desktop) vw(24px, $desktop);
+    font-size: vw(16px, $desktop);
+  }
+
   @media(hover:hover) {
     &:hover {
       border: 1px solid var(--accent-color);
+
+      @include haval-desc {
+        border-width: vw(1px, $desktop);
+      }
     }
   }
 
@@ -251,6 +347,10 @@ a {
     box-shadow: 0 0 20px 0 rgba(0, 202, 191, 0.2);
     background: #fff;
     color: #1d1f20;
+
+    @include haval-desc {
+      border-width: vw(1px, $desktop);
+    }
   }
 }
 
@@ -258,10 +358,18 @@ a {
   border: none;
   border: 1px solid var(--accent-color);
   cursor: pointer;
+
+  @include haval-desc {
+    border-width: vw(1px, $desktop);
+  }
 }
 
 .mt134 {
   margin-top: 134px;
+
+  @include haval-desc {
+    margin-top: vw(134px, $desktop);
+  }
 }
 
 .custom-select {
@@ -293,6 +401,12 @@ a {
   background-size: contain;
   transform: translateY(-50%);
   pointer-events: none;
+
+  @include haval-desc {
+    right: vw(10px, $desktop);
+    width: vw(16px, $desktop);
+    height: vw(9px, $desktop);
+  }
 }
 
 .project_select {
@@ -309,9 +423,18 @@ a {
   background-color: transparent;
   transition: all 0.3s linear;
 
+  @include haval-desc {
+    font-size: vw(15px, $desktop);
+    padding: vw(8px, $desktop) vw(24px, $desktop);
+  }
+
   @media(hover:hover) {
     &:hover {
       border: 1px solid var(--accent-color);
+
+      @include haval-desc{
+        border-width: vw(1px, $desktop);
+    }
     }
   }
 
@@ -322,6 +445,10 @@ a {
     box-shadow: 0 0 20px 0 rgba(0, 202, 191, 0.2);
     background: #fff;
     color: #1d1f20;
+
+    @include haval-desc{
+      border-width: vw(1px, $desktop);
+  }
   }
 
   &:valid {

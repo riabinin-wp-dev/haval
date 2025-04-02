@@ -1,3 +1,6 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .aproove {
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,6 +10,10 @@
         color: #fff;
         margin-bottom: 14px;
 
+        @include haval-desc{
+            margin-bottom: vw(14px, $desktop);
+        }
+
         & span {
             color: var(--accent-color);
         }
@@ -15,6 +22,12 @@
     & .project_more{
         width: 370px;
         height: 51px;
+
+        @include haval-desc{
+            width:  vw(370px, $desktop);
+            height: vw(51px, $desktop);
+        }
+        
         & svg{
         }
     }
@@ -27,6 +40,11 @@
         color: #fff;
         display: block;
         margin-bottom: 32px;
+
+        @include haval-desc{
+            font-size: vw(16px, $desktop);
+            margin-bottom: vw(32px, $desktop);
+        }
     }
 }
 
@@ -37,4 +55,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include haval-desc{
+        min-height: vw(874px, $desktop);
+        padding: vw(55px, $desktop) 0;
+    }
 }

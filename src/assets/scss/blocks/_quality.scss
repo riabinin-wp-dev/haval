@@ -1,7 +1,15 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .quality_inner {
     display: grid;
     grid-template-columns: 472px 1fr;
     gap: 81px;
+
+    @include haval-desc {
+        gap: vw(81px, $desktop);
+        grid-template-columns: vw(472px, $desktop) 1fr;
+    }
 
     & .img-wrap {
 
@@ -9,6 +17,12 @@
             border-radius: 12px;
             width: 472px;
             height: 324px;
+
+            @include haval-desc {
+                border-radius: vw(12px, $desktop);
+                width: vw(472px, $desktop);
+                height: vw(324px, $desktop);
+            }
         }
     }
 }
@@ -18,6 +32,10 @@
     & .project_title {
         margin-bottom: 32px;
         text-wrap: balance;
+
+        @include haval-desc {
+            margin-bottom: vw(32px, $desktop);
+        }
     }
 }
 
@@ -29,12 +47,21 @@
     line-height: 115%;
     color: #1d1f20;
     margin-bottom: 60px;
+
+    @include haval-desc {
+        gap: vw(16px, $desktop);
+        margin-bottom: vw(60px, $desktop);
+    }
 }
 
 .quality_inner_items {
     display: flex;
     gap: 52px;
     align-items: stretch;
+
+    @include haval-desc{
+        gap: vw(52px, $desktop);
+    }
 
     & dl {
         display: flex;
@@ -47,11 +74,19 @@
         font-size: 33px;
         line-height: 115%;
         color: #00cabf;
+
+        @include haval-desc{
+            font-size: vw(33px, $desktop);
+        }
     }
 
     & dd {
         font-weight: 500;
         font-size: 13px;
         color: #626970;
+
+        @include haval-desc{
+            font-size: vw(13px, $desktop);
+        }
     }
 }

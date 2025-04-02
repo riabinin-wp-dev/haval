@@ -1,3 +1,5 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
 
  :root {
     // base
@@ -13,5 +15,10 @@
   
   }
 
+  @include haval-desc{
 
-
+    :root{
+      --content-width: vw(1173px, $desktop);
+      --container-offset: vw(30px, $desktop);
+    }
+}

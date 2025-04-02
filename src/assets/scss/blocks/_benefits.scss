@@ -1,3 +1,6 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .benefits {
     background: #121314;
     overflow: hidden;
@@ -6,26 +9,37 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         padding: 70px 0px 80px;
+
+
+        @include haval-desc {
+            padding: vw(70px, $desktop) 0 vw(80px, $desktop);
+        }
     }
 
     & .project_title {
         color: var(--accent-color);
     }
 
-    & .img-wrap{
+    & .img-wrap {
         width: 100%;
         height: 100%;
         position: relative;
     }
 }
 
-.benefits_image{
+.benefits_image {
     position: absolute;
     bottom: -80px;
     left: -60px;
     z-index: 1;
     width: 100vw;
     max-width: 664px;
+
+    @include haval-desc {
+        bottom: vw(-80px , $desktop);
+        left: vw(-60px, $desktop);
+        max-width: vw(664px, $desktop);
+    }
 }
 
 .benefits_description {
@@ -34,12 +48,21 @@
     font-size: 16px;
     color: #fff;
     margin-bottom: 54px;
+
+    @include haval-desc {
+        margin-bottom: vw(54px, $desktop);
+        font-size: vw(16px, $desktop);
+    }
 }
 
 .benefits_item_list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+
+    @include haval-desc {
+        gap: vw(30px, $desktop);
+    }
 
     & dl:last-child {
         grid-column: 2 span;
@@ -50,10 +73,18 @@
         align-items: center;
         gap: 20px;
 
+        @include haval-desc {
+            gap: vw(20px, $desktop);
+        }
+
         & .flex-column {
             display: flex;
             flex-direction: column;
             gap: 5px;
+
+            @include haval-desc {
+                gap: vw(5px, $desktop);
+            }
         }
 
         & span {
@@ -61,6 +92,10 @@
             font-weight: 500;
             font-size: 14px;
             color: #fff;
+
+            @include haval-desc {
+                font-size: vw(14px, $desktop);
+            }
         }
     }
 
@@ -73,6 +108,11 @@
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
+
+        @include haval-desc {
+            width: vw(50px, $desktop);
+            height: vw(50px, $desktop);
+        }
     }
 
     & dd {
@@ -80,5 +120,9 @@
         font-size: 16px;
         color: #fff;
         margin: 0;
+
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+        }
     }
 }

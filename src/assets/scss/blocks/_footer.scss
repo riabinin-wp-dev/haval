@@ -1,8 +1,17 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .footer {
     position: relative;
 
     & .container {
-        padding: 60px 0 35px;
+        padding-top: 60px ;
+        padding-bottom:  25px;
+
+        @include haval-desc{
+            padding-top: vw(60px , $desktop);
+            padding-bottom: vw(25px , $desktop);
+        }
     }
 }
 
@@ -26,10 +35,18 @@
     display: flex;
     gap: 57px;
 
+    @include haval-desc{
+        gap: vw(57px , $desktop);
+    }
+
     & ul {
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @include haval-desc{
+            font-size: vw(16px , $desktop);
+        }
     }
 
     & li {
@@ -39,12 +56,20 @@
         line-height: 145%;
         letter-spacing: -0.01em;
         color: #121314;
+
+        @include haval-desc{
+            font-size: vw(16px , $desktop);
+        }
     }
 }
 
 .footer_center {
     display: flex;
     gap: 20px;
+
+    @include haval-desc{
+        gap: vw(20px , $desktop);
+    }
 
     & ul {
         padding-left: 0;
@@ -59,6 +84,10 @@
         line-height: 145%;
         letter-spacing: -0.01em;
         color: #121314;
+
+        @include haval-desc{
+            font-size: vw(16px , $desktop);
+        }
     }
 }
 
@@ -69,12 +98,22 @@
     gap: 20px !important;
     column-gap: 40px !important;
 
+    @include haval-desc{
+        margin-left: vw(60px , $desktop);
+        gap: vw(20px , $desktop) !important;
+        column-gap: vw(40px , $desktop) !important;
+    }
+
     & a {
         font-weight: 500;
         font-size: 16px;
         line-height: 145%;
         letter-spacing: -0.01em;
         color: #626970;
+
+        @include haval-desc{
+            font-size: vw(16px , $desktop);
+        }
     }
 }
 
@@ -83,6 +122,12 @@
     display: grid;
     grid-template-columns: 305px 1fr;
     gap: 96px;
+
+    @include haval-desc{
+        margin-top: vw(37px , $desktop);
+        gap: vw(96px , $desktop);
+        grid-template-columns: vw(305px , $desktop) 1fr;
+    }
 
     & p {
         margin: 0;
@@ -93,6 +138,10 @@
         letter-spacing: -0.01em;
         color: #626970;
         opacity: 0.5;
+
+        @include haval-desc{
+            font-size: vw(11px , $desktop);
+        }
     }
 }
 
@@ -101,6 +150,10 @@
     flex-direction: column;
     gap: 4px;
 
+    @include haval-desc{
+        gap: vw(4px , $desktop);
+    }
+
     & span {
         font-weight: 500;
         font-size: 14px;
@@ -108,6 +161,10 @@
         letter-spacing: -0.01em;
         color: #02204f;
         opacity: 0.5;
+
+        @include haval-desc{
+            font-size: vw(14px , $desktop);
+        }
     }
 }
 
@@ -115,6 +172,11 @@
     margin-top: 27px;
     display: grid;
     grid-template-columns: 300px 1fr 300px;
+
+    @include haval-desc{
+        margin-top: vw(27px , $desktop);
+        grid-template-columns: vw(300px , $desktop) 1fr vw(300px , $desktop);
+    }
 
     & small, & a{
         flex-basis: calc(33.3%);
@@ -134,8 +196,16 @@
         color: #626970;
         opacity: 0.5;
 
+        @include haval-desc{
+            font-size: vw(12px , $desktop);
+        }
+
         &:first-child{
             padding-left: 15px;
+
+            @include haval-desc{
+                padding-left: vw(15px , $desktop);
+           }
         }
 
         &:last-child{
@@ -158,4 +228,8 @@
     text-decoration-skip-ink: none;
     color: #626970;
     opacity: 0.5;
+
+    @include haval-desc{
+        font-size: vw(12px , $desktop);
+    }
 }

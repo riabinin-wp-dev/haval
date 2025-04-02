@@ -1,11 +1,22 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
 .tradein {
     & .grid-row {
         grid-template-columns: 0.88fr 1.12fr;
         gap: 130px;
+
+        @include haval-desc{
+            gap: vw(130px, $desktop);
+        }
     }
 
     & .project_title {
         margin-bottom: 36px;
+
+        @include haval-desc{
+            margin-bottom:  vw(36px, $desktop);
+        }
     }
 }
 
@@ -16,6 +27,11 @@
     color: #1d1f20;
     margin: 0;
     margin-bottom: 22px;
+
+    @include haval-desc{
+        margin-bottom: vw(22px, $desktop);
+        font-size: vw(24px , $desktop);
+    }
 }
 
 .tradein_form {
@@ -23,6 +39,10 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @include haval-desc{
+            gap: vw(10px, $desktop);
+        }
     }
 
     & span,
@@ -34,6 +54,10 @@
 
     & .project_input {
         font-size: 15px;
+
+        @include haval-desc{
+            font-size: vw(15px, $desktop);
+        }
 
         &::placeholder {
             color: rgba(98, 105, 112, 0.4);
@@ -59,6 +83,15 @@
     padding: 32px;
     margin-top: 97px;
 
+
+    @include haval-desc{
+        border-radius: vw(12px, $desktop);
+        width: vw(572px, $desktop);
+        height: vw(366px, $desktop);
+        padding: vw(32px, $desktop);
+        margin-top: vw(97px, $desktop);
+    }
+
     & img {
         width: 100vw;
         max-width: 614px;
@@ -66,6 +99,12 @@
         left: 23px;
         bottom: -62px;
         z-index: 1;
+
+        @include haval-desc{
+            max-width: vw(614px, $desktop);
+            left: vw(23px, $desktop);
+            bottom: vw(-62px, $desktop);
+        }
     }
 }
 
@@ -80,4 +119,10 @@
     bottom: 32px;
     left: 32px;
     z-index: 1;
+
+    @include haval-desc{
+        font-size: vw(14px, $desktop);
+        bottom: vw(32px, $desktop);
+        left: vw(32px, $desktop);
+    }
 }
