@@ -1,8 +1,8 @@
 @use  'mixins/font-face' as *;
 
-@include font-face("TT Wellingtons", "../fonts/TTWellingtons-Bold", 700, normal);
-@include font-face("TT Wellingtons", "../fonts/TTWellingtons-Medium", 500, normal);
-@include font-face("Haval", "../fonts/Haval-Medium", 400, normal);
-@include font-face("Haval", "../fonts/Haval-Regular", 400, normal);
+@include font-face("TT Wellingtons", "../fonts/TT-Wellingtons-Bold", 700, normal);
+@include font-face("TT Wellingtons", "../fonts/TT-Wellingtons-Medium", 500, normal);
+// @include font-face("Haval", "../fonts/Haval-MediumSlanted", 500, normal);
+// @include font-face("Haval", "../fonts/Haval-Regular", 400, normal);
 // @include font-face("Roboto", "../fonts/Roboto-Bold", 600, normal);
 // @include font-face("Inter", "../fonts/Inter-ExtraBold", 800, normal);

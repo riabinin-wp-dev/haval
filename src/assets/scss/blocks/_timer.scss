@@ -9,8 +9,12 @@
     z-index: 2;
     width: 100%;
 
-    @include haval-desc{
+    @include haval-desc {
         top: vw(-157px, $desktop);
+    }
+
+    @include tablet {
+        top: vw(-90px, $tablet);
     }
 
     & .project_title {
@@ -22,9 +26,18 @@
         color: var(--accent-color);
         margin: 0 0 48px;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(34px, $desktop);
             margin-bottom: vw(48px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(20px, $tablet);
+            margin-bottom: vw(27px, $tablet);
+            max-width: vw(552px, $tablet);
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -39,10 +52,14 @@
     max-width: max-content;
     min-width: 1078px;
 
-    @include haval-desc{
+    @include haval-desc {
         padding: vw(18px, $desktop) 0;
         margin-bottom: vw(27px, $desktop);
         min-width: vw(1078px, $desktop);
+    }
+
+    @include tablet {
+        padding: vw(16px, $tablet) 0 0;
     }
 
     & .grid-row {
@@ -50,10 +67,16 @@
         gap: 32px;
         align-items: center;
 
-        @include haval-desc{
+        @include haval-desc {
             grid-template-columns: vw(115px, $desktop) 1fr;
             gap: vw(32px, $desktop);
         }
+
+        @include tablet {
+            grid-template-columns: vw(86px, $tablet) 1fr;
+            gap: vw(32px, $tablet);
+        }
+
     }
 }
 
@@ -65,8 +88,12 @@
     text-align: center;
     color: #121314;
 
-    @include haval-desc{
+    @include haval-desc {
         font-size: vw(24px, $desktop);
+    }
+
+    @include tablet {
+        font-size: vw(18px, $tablet);
     }
 }
 
@@ -78,11 +105,19 @@
     border: 1px solid rgba(189, 195, 198, 0.7);
     border-radius: 4px;
 
-    @include haval-desc{
+    @include haval-desc {
         padding: vw(13px, $desktop) vw(87px, $desktop);
         gap: vw(30px, $desktop);
         border-radius: vw(4px, $desktop);
         border: vw(1px, $desktop) solid rgba(189, 195, 198, 0.7);
+    }
+
+
+    @include tablet {
+        padding: vw(20px, $tablet) vw(40px, $tablet);
+        gap: vw(12px, $tablet);
+        border-radius: vw(2px, $tablet);
+        border-width: vw(1px, $tablet);
     }
 
     & strong {
@@ -91,8 +126,12 @@
         line-height: 115%;
         color: #121314;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(24px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(18px, $tablet);
         }
     }
 
@@ -102,8 +141,12 @@
         line-height: 115%;
         color: #121314;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(24px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(18px, $tablet);
         }
     }
 
@@ -114,13 +157,19 @@
         height: 1px;
         flex-grow: 1;
 
-        @include haval-desc{
+        @include haval-desc {
             border: vw(1px, $desktop) solid #bdc3c6;
             height: vw(1px, $desktop);
         }
+
+        @include tablet {
+            border: vw(1px, $tablet) solid #bdc3c6;
+            height: vw(1px, $tablet);
+        }
     }
 }
-.timer_inner{
+
+.timer_inner {
     position: relative;
     z-index: 2;
 }
@@ -128,7 +177,7 @@
 .timer_inner_form {
     padding: 0 61px;
 
-    @include haval-desc{
+    @include haval-desc {
         padding: 0 vw(61px, $desktop);
     }
 
@@ -138,21 +187,41 @@
         gap: 40px;
         margin-bottom: 13px;
 
-        @include haval-desc{
+        @include haval-desc {
             gap: vw(40px, $desktop);
             margin-bottom: vw(13px, $desktop);
+        }
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: vw(12px, $tablet);
+            row-gap: vw(16px, $tablet);
         }
     }
 
     & .flex-row.--agreement {
         display: flex;
         justify-content: flex-end;
+
+        @include tablet {
+            justify-content: center;
+        }
     }
 
     & span,
     & input {
         width: 100%;
         flex-grow: 1;
+    }
+
+    & .project_submit {
+        @include tablet {
+            grid-column: 2 span;
+            max-width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
 
@@ -161,8 +230,19 @@
     align-items: center;
     gap: 8px;
 
-    @include haval-desc{
+    @include haval-desc {
         gap: vw(8px, $desktop);
+    }
+
+    @include tablet {
+        gap: vw(8px, $tablet);
+    }
+
+    & svg {
+        @include tablet {
+            width: vw(12px, $tablet);
+            height: vw(12px, $tablet);
+        }
     }
 }
 
@@ -174,16 +254,21 @@
     letter-spacing: -0.01em;
     color: #bdc3c6;
 
-    @include haval-desc{
+    @include haval-desc {
         font-size: vw(12px, $desktop);
     }
-    
-    & a{
+
+    @include tablet {
+        font-size: vw(12px, $tablet);
+    }
+
+    & a {
         text-decoration: underline;
         text-decoration-skip-ink: none;
     }
 }
-.timer_border{
+
+.timer_border {
     position: absolute;
     bottom: 0;
     transform: translateY(20px);
@@ -191,13 +276,13 @@
     z-index: 1;
     left: 6px;
 
-    @include haval-desc{
+    @include haval-desc {
         transform: translateY(vw(20px, $desktop));
         right: vw(6px, $desktop);
         left: vw(6px, $desktop);
     }
-    
-    & svg{
+
+    & svg {
         background-color: #fff;
         border-radius: 24px;
         display: block;
@@ -207,15 +292,21 @@
         z-index: 2;
         width: calc(100% - 12px);
 
-        @include haval-desc{
+        @include haval-desc {
             width: vw(1175px, $desktop);
             border-radius: vw(24px, $desktop);
             margin-left: auto;
             margin-right: auto;
         }
 
-        @include for-desktop{
+        @include for-desktop {
             width: calc(100% - vw(100px, $desktop));
+        }
+
+        @include tablet {
+            width: vw(688px, $tablet);
+            height: vw(250px, $tablet);
+            border-radius: vw(20px, $tablet);
         }
     }
 }
