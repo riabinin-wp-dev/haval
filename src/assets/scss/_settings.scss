@@ -114,6 +114,10 @@ a {
       gap: vw(16px, $desktop);
     }
 
+    @include tablet {
+      gap: vw(16px, $tablet);
+    }
+
     & path {
       transition: all 0.3s linear;
     }
@@ -453,6 +457,12 @@ a {
     width: vw(16px, $desktop);
     height: vw(9px, $desktop);
   }
+
+  @include tablet{
+    right: vw(10px, $tablet);
+    width: vw(16px, $tablet);
+    height: vw(9px, $tablet);
+  }
 }
 
 .project_select {
@@ -472,6 +482,11 @@ a {
   @include haval-desc {
     font-size: vw(15px, $desktop);
     padding: vw(8px, $desktop) vw(24px, $desktop);
+  }
+
+  @include tablet{
+    font-size: vw(15px, $tablet);
+    padding: vw(8px, $tablet) vw(24px, $tablet);
   }
 
   @media(hover:hover) {

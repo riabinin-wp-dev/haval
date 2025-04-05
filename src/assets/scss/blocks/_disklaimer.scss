@@ -20,20 +20,23 @@
         font-size: vw(16px , $desktop);
         gap: vw(6px , $desktop);
     }
+
+    @include tablet{
+        margin-bottom: vw(10px , $tablet);
+        font-size: vw(16px , $tablet);
+        gap: vw(6px , $tablet);
+    }
 }
 
 .disklaimer_title svg {
-    transition: transform 0.3s ease;
-}
-
-.disklaimer_title svg {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s linear;
+    transform: rotate(180deg);
 }
 
 .accordion_content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s linear;
 
     & p {
         font-family: var(--font-family);
@@ -49,6 +52,10 @@
             padding-bottom: vw(14px , $desktop);
             font-size: vw(14px , $desktop);
         }
+        @include tablet{
+            padding-bottom: vw(14px , $tablet);
+            font-size: vw(14px , $tablet);
+        }
     }
 }
 
@@ -62,6 +69,10 @@
         padding-left: vw(20px , $desktop);
     }
 
+    @include tablet{
+        padding-left: vw(20px , $tablet);
+    }
+
     & li{
         font-weight: 500;
         font-size: 14px;
@@ -71,6 +82,10 @@
 
         @include haval-desc{
             font-size: vw(14px , $desktop);
+        }
+
+        @include tablet{
+            font-size: vw(14px , $tablet);
         }
     }
 
@@ -87,6 +102,11 @@
             padding: 0 0 vw(10px , $desktop) 0;
             font-size: vw(14px , $desktop);
         }
+
+        @include tablet{
+            padding: 0 0 vw(10px , $tablet) 0;
+            font-size: vw(14px , $tablet);
+        }
     }
 
     & li+li {
@@ -95,21 +115,29 @@
         @include haval-desc{
             margin-top: vw(10px , $desktop);
         }
+
+        @include tablet{
+            margin-top: vw(10px , $tablet);
+        }
     }
 }
 
 /* Стили для открытого состояния */
 .accordion.active .disklaimer_title svg {
-    transform: rotate(180deg);
+    transform: rotate(0);
 }
 
 .accordion.active .accordion_content {
-    max-height: 1000px;
+    max-height: 10000px;
     /* Большое значение для вмещения контента */
     padding-bottom: 15px;
 
     @include haval-desc{
         padding-bottom: vw(15px , $desktop);
+    }
+
+    @include tablet{
+        padding-bottom: vw(15px , $tablet);
     }
 
 }

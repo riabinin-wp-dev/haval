@@ -10,8 +10,14 @@
         color: #fff;
         margin-bottom: 14px;
 
-        @include haval-desc{
+        @include haval-desc {
             margin-bottom: vw(14px, $desktop);
+        }
+
+        @include tablet {
+            margin-bottom: vw(12px, $tablet);
+            font-weight: 500;
+            font-family: var(--font-family);
         }
 
         & span {
@@ -19,17 +25,21 @@
         }
     }
 
-    & .project_more{
+    & .project_more {
         width: 370px;
         height: 51px;
 
-        @include haval-desc{
-            width:  vw(370px, $desktop);
+        @include haval-desc {
+            width: vw(370px, $desktop);
             height: vw(51px, $desktop);
         }
-        
-        & svg{
+
+        @include tablet {
+            width: vw(349px, $tablet);
+            height: vw(51px, $tablet);
         }
+
+        & svg {}
     }
 
     & small {
@@ -41,9 +51,14 @@
         display: block;
         margin-bottom: 32px;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(16px, $desktop);
             margin-bottom: vw(32px, $desktop);
+        }
+
+        @include tablet{
+            font-size: vw(15px, $tablet);
+            margin-bottom: vw(20px, $tablet);
         }
     }
 }
@@ -56,8 +71,13 @@
     flex-direction: column;
     justify-content: flex-end;
 
-    @include haval-desc{
+    @include haval-desc {
         min-height: vw(874px, $desktop);
         padding: vw(55px, $desktop) 0;
+    }
+
+    @include tablet{
+        min-height: vw(640px, $tablet);
+        padding: vw(40px, $tablet) 0;
     }
 }

@@ -5,12 +5,17 @@
     position: relative;
 
     & .container {
-        padding-top: 60px ;
-        padding-bottom:  25px;
+        padding-top: 60px;
+        padding-bottom: 25px;
 
-        @include haval-desc{
-            padding-top: vw(60px , $desktop);
-            padding-bottom: vw(25px , $desktop);
+        @include haval-desc {
+            padding-top: vw(60px, $desktop);
+            padding-bottom: vw(25px, $desktop);
+        }
+
+        @include tablet {
+            padding-top: vw(80px, $tablet);
+            padding-bottom: vw(27px, $tablet);
         }
     }
 }
@@ -21,6 +26,14 @@
     top: 0;
     transform: translateX(-50%);
     z-index: -1;
+
+    & svg {
+        @include tablet {
+            height: 100%;
+            min-height: vw(488px, $tablet);
+        }
+    }
+
 }
 
 .footer_to_top {
@@ -35,8 +48,21 @@
     display: flex;
     gap: 57px;
 
-    @include haval-desc{
-        gap: vw(57px , $desktop);
+    @include haval-desc {
+        gap: vw(57px, $desktop);
+    }
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(24px, $tablet);
+    }
+
+    & nav {
+        @include tablet {
+            order: -1;
+            grid-column: 2 span;
+        }
     }
 
     & ul {
@@ -44,9 +70,16 @@
         flex-direction: column;
         gap: 16px;
 
-        @include haval-desc{
-            font-size: vw(16px , $desktop);
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+            gap: vw(16px, $desktop);
         }
+
+        @include tablet {
+            font-size: vw(16px, $tablet);
+            gap: vw(16px, $tablet);
+        }
+
     }
 
     & li {
@@ -57,8 +90,12 @@
         letter-spacing: -0.01em;
         color: #121314;
 
-        @include haval-desc{
-            font-size: vw(16px , $desktop);
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(16px, $tablet);
         }
     }
 }
@@ -67,8 +104,8 @@
     display: flex;
     gap: 20px;
 
-    @include haval-desc{
-        gap: vw(20px , $desktop);
+    @include haval-desc {
+        gap: vw(20px, $desktop);
     }
 
     & ul {
@@ -85,8 +122,12 @@
         letter-spacing: -0.01em;
         color: #121314;
 
-        @include haval-desc{
-            font-size: vw(16px , $desktop);
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(16px, $tablet);
         }
     }
 }
@@ -98,10 +139,19 @@
     gap: 20px !important;
     column-gap: 40px !important;
 
-    @include haval-desc{
-        margin-left: vw(60px , $desktop);
-        gap: vw(20px , $desktop) !important;
-        column-gap: vw(40px , $desktop) !important;
+    @include haval-desc {
+        margin-left: vw(60px, $desktop);
+        gap: vw(20px, $desktop) !important;
+        column-gap: vw(40px, $desktop) !important;
+    }
+
+    @include tablet {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        column-gap: unset !important;
+        gap: vw(25px, $tablet);
+        margin-left: 0;
     }
 
     & a {
@@ -111,8 +161,12 @@
         letter-spacing: -0.01em;
         color: #626970;
 
-        @include haval-desc{
-            font-size: vw(16px , $desktop);
+        @include haval-desc {
+            font-size: vw(16px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(16px, $tablet);
         }
     }
 }
@@ -123,10 +177,16 @@
     grid-template-columns: 305px 1fr;
     gap: 96px;
 
-    @include haval-desc{
-        margin-top: vw(37px , $desktop);
-        gap: vw(96px , $desktop);
-        grid-template-columns: vw(305px , $desktop) 1fr;
+    @include haval-desc {
+        margin-top: vw(37px, $desktop);
+        gap: vw(96px, $desktop);
+        grid-template-columns: vw(305px, $desktop) 1fr;
+    }
+
+    @include tablet {
+        margin-top: vw(24px, $tablet);
+        gap: vw(51px, $tablet);
+        grid-template-columns: vw(305px, $tablet) 1fr;
     }
 
     & p {
@@ -139,8 +199,12 @@
         color: #626970;
         opacity: 0.5;
 
-        @include haval-desc{
-            font-size: vw(11px , $desktop);
+        @include haval-desc {
+            font-size: vw(11px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(11px, $tablet);
         }
     }
 }
@@ -150,8 +214,13 @@
     flex-direction: column;
     gap: 4px;
 
-    @include haval-desc{
-        gap: vw(4px , $desktop);
+    @include haval-desc {
+        gap: vw(4px, $desktop);
+    }
+
+    @include tablet {
+        gap: vw(4px, $tablet);
+
     }
 
     & span {
@@ -162,8 +231,13 @@
         color: #02204f;
         opacity: 0.5;
 
-        @include haval-desc{
-            font-size: vw(14px , $desktop);
+        @include haval-desc {
+            font-size: vw(14px, $desktop);
+        }
+
+        @include tablet {
+            font-size: vw(14px, $tablet);
+            opacity: 1;
         }
     }
 }
@@ -173,16 +247,27 @@
     display: grid;
     grid-template-columns: 300px 1fr 300px;
 
-    @include haval-desc{
-        margin-top: vw(27px , $desktop);
-        grid-template-columns: vw(300px , $desktop) 1fr vw(300px , $desktop);
+    @include haval-desc {
+        margin-top: vw(27px, $desktop);
+        grid-template-columns: vw(300px, $desktop) 1fr vw(300px, $desktop);
     }
 
-    & small, & a{
+    @include tablet {
+        display: flex;
+        gap: vw(10px, $tablet);
+        margin-top: vw(24px, $tablet);
+    }
+
+    & small,
+    & a {
         flex-basis: calc(33.3%);
+
+        @include tablet {
+            flex-basis: unset;
+        }
     }
 
-    & a{
+    & a {
         display: block;
         margin: 0 auto;
     }
@@ -196,19 +281,27 @@
         color: #626970;
         opacity: 0.5;
 
-        @include haval-desc{
-            font-size: vw(12px , $desktop);
+        @include haval-desc {
+            font-size: vw(12px, $desktop);
         }
 
-        &:first-child{
+        @include tablet {
+            font-size: vw(12px, $tablet);
+        }
+
+        &:first-child {
             padding-left: 15px;
 
-            @include haval-desc{
-                padding-left: vw(15px , $desktop);
-           }
+            @include haval-desc {
+                padding-left: vw(15px, $desktop);
+            }
+
+            @include tablet {
+                padding-left: 0;
+            }
         }
 
-        &:last-child{
+        &:last-child {
             display: block;
             margin-left: auto;
         }
@@ -229,7 +322,12 @@
     color: #626970;
     opacity: 0.5;
 
-    @include haval-desc{
-        font-size: vw(12px , $desktop);
+    @include haval-desc {
+        font-size: vw(12px, $desktop);
+    }
+
+    @include tablet {
+        font-size: vw(12px, $tablet);
+
     }
 }
