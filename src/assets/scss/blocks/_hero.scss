@@ -20,6 +20,11 @@
             width: vw(768px, $tablet);
             height: vw(540px, $tablet);
         }
+
+        @include mobile{
+            width: vw(375px, $mobile);
+            height: vw(322px, $mobile);
+        }
     }
 
     & .embla__controls {
@@ -100,6 +105,11 @@
         font-size: vw(40px, $tablet);
         margin-bottom: 0;
     }
+
+    @include mobile{
+        padding-top: vw(20px, $mobile);
+        font-size: vw(24px, $mobile);
+    }
 }
 
 .hero_desc {
@@ -116,9 +126,17 @@
         font-size: vw(32px, $tablet);
     }
 
+    @include mobile{
+        font-size: vw(19px, $mobile);
+    }
+
     & +.hero_action{
         @include tablet{
             margin-top: vw(8px , $tablet);
+        }
+
+        @include mobile{
+            margin-top: vw(0px, $mobile);
         }
     }
 }
@@ -136,6 +154,8 @@
         font-size: vw(20px, $tablet);
         margin: 0;
         margin-bottom: vw(20px, $tablet);
-
+    }
+    @include mobile{
+        font-size: vw(13px, $mobile);
     }
 }

@@ -26,6 +26,12 @@
         font-size: vw(16px , $tablet);
         gap: vw(6px , $tablet);
     }
+
+    @include mobile{
+        margin-bottom: vw(10px , $mobile);
+        font-size: vw(16px , $mobile);
+        gap: vw(6px , $mobile);
+    }
 }
 
 .disklaimer_title svg {
@@ -56,6 +62,11 @@
             padding-bottom: vw(14px , $tablet);
             font-size: vw(14px , $tablet);
         }
+
+        @include mobile{
+            padding-bottom: vw(14px , $mobile);
+            font-size: vw(14px , $mobile);
+        }
     }
 }
 
@@ -73,6 +84,10 @@
         padding-left: vw(20px , $tablet);
     }
 
+    @include mobile{
+        padding-left: vw(20px , $mobile);
+    }
+
     & li{
         font-weight: 500;
         font-size: 14px;
@@ -86,6 +101,10 @@
 
         @include tablet{
             font-size: vw(14px , $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(14px , $mobile);
         }
     }
 
@@ -107,6 +126,11 @@
             padding: 0 0 vw(10px , $tablet) 0;
             font-size: vw(14px , $tablet);
         }
+
+        @include mobile{
+            padding: 0 0 vw(10px , $mobile) 0;
+            font-size: vw(14px , $mobile);
+        }
     }
 
     & li+li {
@@ -118,6 +142,10 @@
 
         @include tablet{
             margin-top: vw(10px , $tablet);
+        }
+
+        @include mobile{
+            margin-top: vw(10px , $mobile);
         }
     }
 }
@@ -140,4 +168,7 @@
         padding-bottom: vw(15px , $tablet);
     }
 
+    @include mobile{
+        padding-bottom: vw(15px, $mobile);
+    }
 }

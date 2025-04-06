@@ -22,6 +22,10 @@
             margin-bottom: vw(12px, $desktop);
             font-family: var(--font-family);
         }
+
+        @include mobile{
+            margin-bottom: vw(18px, $mobile);
+        }
     }
 
     &_tablet {
@@ -32,15 +36,27 @@
             display: block;
         }
 
+        @include mobile{
+            margin-bottom: vw(54px, $mobile);
+        }
+
         & p {
             margin: 0;
             font-weight: 500;
             font-size: vw(15px, $tablet);
             line-height: 115%;
             color: #fff;
+
+            @include mobile{
+                font-size: vw(15px, $mobile);
+            }
         
             & + p{
                 margin-top: vw(15px, $tablet);
+
+                @include mobile{
+                    margin-top: vw(0px, $mobile);
+                }
             }
         }
     }
@@ -60,6 +76,10 @@
         padding: vw(60px, $tablet) vw(40px, $tablet);
         border-radius: 0;
     }
+
+    @include mobile{
+        padding: vw(60px, $mobile) vw(16px, $mobile) vw(121px, $mobile);
+    }
 }
 
 .special_inner {
@@ -74,6 +94,10 @@
     @include tablet {
         gap: vw(20px, $tablet);
         align-items: flex-start;
+    }
+
+    @include mobile{
+        grid-template-columns: 1fr;
     }
 
     & .img-wrap {
@@ -93,6 +117,10 @@
                 width: vw(332px, $tablet);
                 height: vw(276px, $tablet);
             }
+        }
+
+        @include mobile{
+            display: none;
         }
     }
 }
@@ -149,6 +177,11 @@
         margin-top: vw(10px, $tablet);
     }
 
+    @include mobile{
+        gap: vw(17px, $mobile);
+        margin-top: 0;
+    }
+
 
     & span,
     & label,
@@ -180,6 +213,11 @@
             letter-spacing: -0.03em;
             white-space: nowrap;
         }
+
+        @include mobile{
+            gap: vw(4px, $mobile);
+            font-size: vw(11px, $mobile);
+        }
     }
 
     & small {
@@ -200,6 +238,10 @@
         @include tablet{
             font-size: vw(12px, $tablet);
             margin-top: 0;
+        }
+
+        @include mobile{
+            font-size: vw(12px, $mobile);
         }
     }
 }

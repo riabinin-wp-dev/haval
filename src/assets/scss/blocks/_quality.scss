@@ -10,9 +10,15 @@
         gap: vw(81px, $desktop);
         grid-template-columns: vw(472px, $desktop) 1fr;
     }
-    @include tablet{
+
+    @include tablet {
         grid-template-columns: 1fr 1fr;
         gap: vw(24px, $tablet);
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     & .img-wrap {
@@ -28,10 +34,32 @@
                 height: vw(324px, $desktop);
             }
 
-            @include tablet{
+            @include tablet {
                 border-radius: vw(12px, $tablet);
                 width: vw(332px, $tablet);
                 height: vw(317px, $tablet);
+            }
+
+            @include mobile {
+                border-radius: vw(12px, $mobile);
+                width: vw(342px, $mobile);
+                height: vw(235px, $mobile);
+                margin-bottom: vw(16px, $mobile);
+            }
+        }
+
+        &.--desktop {
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &.--mobile {
+
+            display: none;
+
+            @include mobile {
+                display: block;
             }
         }
     }
@@ -47,8 +75,12 @@
             margin-bottom: vw(32px, $desktop);
         }
 
-        @include tablet{
+        @include tablet {
             margin-bottom: vw(12px, $tablet);
+        }
+
+        @include mobile{
+            margin-bottom: vw(12px, $mobile);
         }
     }
 }
@@ -68,10 +100,15 @@
         font-size: vw(16px, $desktop);
     }
 
-    @include tablet{
+    @include tablet {
         // gap: vw(16px, $tablet);
         margin-bottom: vw(30px, $tablet);
         font-size: vw(15px, $tablet);
+    }
+
+    @include mobile{
+        margin-bottom: vw(28px, $mobile);
+        font-size: vw(15px, $mobile);
     }
 }
 
@@ -80,13 +117,17 @@
     gap: 52px;
     align-items: stretch;
 
-    @include haval-desc{
+    @include haval-desc {
         gap: vw(52px, $desktop);
     }
 
-    @include tablet{
+    @include tablet {
         gap: vw(17px, $tablet);
         justify-content: space-between;
+    }
+
+    @include mobile{
+        gap: vw(30px, $mobile);
     }
 
     & dl {
@@ -94,7 +135,7 @@
         flex-direction: column;
         flex-grow: 1;
         flex-shrink: 0;
-        flex-basis: calc( 50% - vw(17px, $tablet));
+        flex-basis: calc(50% - vw(17px, $tablet));
     }
 
     & dt {
@@ -105,12 +146,16 @@
         color: #00cabf;
         white-space: nowrap;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(33px, $desktop);
         }
 
-        @include tablet{
+        @include tablet {
             font-size: vw(27px, $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(27px, $mobile);
         }
     }
 
@@ -119,11 +164,16 @@
         font-size: 13px;
         color: #626970;
 
-        @include haval-desc{
+        @include haval-desc {
             font-size: vw(13px, $desktop);
         }
-        @include tablet{
+
+        @include tablet {
             font-size: vw(12px, $tablet);
+        }
+
+        @include mobile {
+            font-size: vw(11px, $mobile);
         }
     }
 }

@@ -20,6 +20,12 @@
         border-width: vw(1px, $tablet);
         height: vw(420px, $tablet) !important;
     }
+
+    @include mobile{
+        border-radius: vw(12px, $mobile);
+        border-width: vw(1px, $mobile);
+        height: vw(420px, $mobile) !important;
+    }
 }
 
 .map {
@@ -28,9 +34,23 @@
         margin-bottom: vw(268px, $tablet);
     }
 
+    @include mobile{
+        margin-bottom: vw(508px, $mobile);
+    }
+
 
     & .container {
         position: relative;
+    }
+
+    & .project_title{
+        @include tablet{
+            margin-bottom: vw(20px, $tablet);
+        }
+
+        @include mobile{
+            margin-bottom: vw(20px, $mobile);
+        }
     }
 }
 
@@ -67,6 +87,17 @@
         min-width: vw(608px, $tablet);
         min-height: vw(304px, $tablet);
     }
+    
+    @include mobile{
+        border-radius: vw(12px, $mobile);
+        border-width: vw(1px, $mobile);
+        padding: vw(32px, $mobile) vw(20px, $mobile);
+        bottom: vw(-420px, $mobile);
+        display: flex;
+        flex-direction: column;
+        min-width: vw(311px, $mobile);
+        min-height: vw(501px, $mobile);
+    }
 
     & dl {
         display: flex;
@@ -83,6 +114,11 @@
             gap: vw(8px, $tablet);
             margin-bottom: 0;
             margin-top: vw(-15px, $tablet);
+        }
+
+        @include mobile{
+            gap: vw(8px, $mobile);
+            margin-top: vw(12px, $mobile);
         }
 
         & dt {
@@ -104,6 +140,11 @@
                     width: vw(14px, $tablet);
                     height: vw(14px, $tablet);
                 }
+
+                @include mobile{
+                    width: vw(14px, $mobile);
+                    height: vw(14px, $mobile);
+                }
             }
         }
 
@@ -121,6 +162,10 @@
 
             @include tablet {
                 font-size: vw(14px, $tablet);
+            }
+
+            @include mobile{
+                font-size: vw(14px, $mobile);
             }
         }
     }
@@ -143,6 +188,14 @@
             grid-column: 2;
             grid-row: 1/6;
         }
+
+        @include mobile{
+            gap: vw(12px, $mobile);
+            margin-bottom: vw(20px, $mobile);
+            margin-top: vw(12px, $mobile);
+            width: 100%;
+        }
+
     }
 
     & .project_link {
@@ -156,6 +209,12 @@
             padding-bottom: vw(8px, $tablet);
         }
 
+        @include mobile{
+            font-size: vw(16px, $mobile);
+            padding-top: vw(8px, $mobile);
+            padding-bottom: vw(8px, $mobile);
+        }
+
         &+.project_link {
             margin-top: 16px;
 
@@ -166,6 +225,10 @@
             @include tablet {
                 margin-top: 0;
             }
+
+            @include mobile{
+                margin-top: vw(8px, $mobile);
+            }
         }
 
         &.instock{
@@ -173,6 +236,11 @@
                 padding-top: vw(7.5px, $tablet);
                 padding-bottom: vw(7.5px, $tablet);
                 line-height: 1.45;
+            }
+
+            @include mobile{
+                padding-top: vw(7px, $mobile);
+                padding-bottom: vw(7px, $mobile);
             }
         }
     }
@@ -185,11 +253,19 @@
     .map_info>dl.h-reset,
     .map_info>.project_link:not(.instock) {
         grid-column: 1;
+
+        @include mobile{
+            grid-column: unset;
+        }
     }
 
     .map_info .grid-row,
     .map_info .project_link.instock {
         grid-column: 2;
+
+        @include mobile{
+            grid-column: unset;
+        }
     }
 }
 
@@ -212,6 +288,10 @@
         font-size: vw(20px, $tablet);
         margin-bottom: 0;
     }
+
+    @include mobile{
+        font-size: vw(14px, $mobile);
+    }
 }
 
 .map_info_desc {
@@ -233,6 +313,12 @@
         margin-bottom: vw(20px, $tablet);
         margin-top: vw(-30px, $tablet);
     }
+
+    @include mobile{
+        margin-top: 0;
+        font-size: vw(15px, $mobile);
+        margin-bottom: vw(20px, $mobile);
+    }
 }
 
 .map_info_item_title {
@@ -244,6 +330,11 @@
     @include haval-desc {
         gap: vw(8px, $desktop);
         margin-bottom: vw(8px, $desktop);
+    }
+
+    @include mobile{
+        margin-bottom: vw(2px, $mobile);
+        gap: vw(8px, $mobile);
     }
 
 
@@ -258,6 +349,14 @@
 
         @include haval-desc {
             padding-left: vw(22px, $desktop);
+        }
+
+        @include tablet{
+            padding-left: vw(22px, $tablet);
+        }
+
+        @include mobile{
+            padding-left: vw(22px, $mobile);
         }
     }
 }

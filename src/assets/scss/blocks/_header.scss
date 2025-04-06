@@ -11,6 +11,28 @@
     @include tablet {
         padding: vw(12px, $tablet) 0;
     }
+
+    @include mobile{
+        padding: vw(10px, $mobile) 0;
+    }
+
+    &.active .header_burger {
+        & span:nth-child(1) {
+            transform: translateY(vw(5px, $mobile)) rotate(45deg); 
+        }
+
+        & span:nth-child(2) {
+            opacity: 0; 
+        }
+
+        & span:nth-child(3) {
+            transform: translateY(vw(-5px, $mobile)) rotate(-45deg); 
+        }
+    }
+
+    &.active .header_center{
+        transform: rotateX(0);
+    }
 }
 
 .header_inner {
@@ -27,6 +49,32 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: vw(12px, $tablet);
+    }
+    @include mobile{
+        display: flex;
+        gap: vw(8px, $mobile);
+        justify-content: space-between;
+    }
+}
+.header_burger{
+    display: none;
+    border: none;
+    background-color: transparent;
+    height: vw(14.7px , $mobile);
+
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        gap: vw(3px, $mobile);
+    }
+
+    & span{
+        width: vw(19.2px, $mobile);
+        height: vw(1.8px, $mobile);
+        background-color: black;
+        flex-shrink: 0;
+        transition: transform 0.3s linear; 
+
     }
 }
 
@@ -49,6 +97,11 @@
         gap: vw(4px, $tablet);
         font-size: vw(14px, $tablet);
     }
+    @include mobile{
+        gap: vw(3px, $mobile);
+        font-size: vw(8px, $mobile);
+    }
+  
 
     & svg {
         width: 118px;
@@ -62,6 +115,10 @@
         @include tablet {
             width: vw(118px, $tablet);
             height: vw(14px, $tablet);
+        }
+        @include mobile{
+            width: vw(74px, $mobile);
+            height: vw(9px, $mobile);
         }
     }
 }
@@ -87,6 +144,23 @@
         gap: vw(8px, $tablet);
     }
 
+    @include mobile{
+        position: absolute;
+        width: 100%;
+        top: vw(49px, $mobile);
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px , $mobile);
+        padding: vw(40px, $mobile) vw(60px, $mobile);
+        transition: all 0.3s linear;
+        transform-origin: 0 0;
+        transform: rotateX(-90deg);
+    }
+
     & .--info {
         display: grid;
         grid-template-columns: 12px 1fr;
@@ -110,6 +184,12 @@
             font-size: vw(14px, $tablet);
         }
 
+        @include mobile{
+            grid-template-columns: vw(12px, $mobile) 1fr;
+            gap: vw(8px, $mobile);
+            font-size: vw(14px, $mobile);
+        }
+
         & img,
         & svg {
             width: 12px;
@@ -124,6 +204,11 @@
             @include tablet {
                 width: vw(12px, $tablet);
                 height: vw(12px, $tablet);
+            }
+
+            @include mobile{
+                width: vw(12px, $mobile);
+                height: vw(12px, $mobile);
             }
         }
     }

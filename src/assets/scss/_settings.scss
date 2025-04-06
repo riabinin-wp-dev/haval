@@ -70,6 +70,12 @@ a {
     font-size: vw(12px, $tablet);
   }
 
+  @include mobile {
+    border-radius: vw(2px, $mobile);
+    padding: vw(6px, $mobile) vw(8px, $mobile);
+    font-size: vw(12px, $mobile);
+  }
+
   @media (hover: hover) {
     &:hover {
       box-shadow: 0 0 20px 0 rgba(0, 202, 191, 0.4);
@@ -93,9 +99,14 @@ a {
       border-width: vw(1px, $desktop);
     }
 
-    @include tablet{
+    @include tablet {
       font-size: vw(14px, $tablet);
       border-width: vw(2px, $tablet);
+    }
+
+    @include mobile{
+      font-size: vw(14px, $mobile);
+      border-width: vw(1px, $mobile);
     }
 
     @media (hover: hover) {
@@ -156,9 +167,14 @@ a {
       border-width: vw(1px, $desktop);
     }
 
-    @include tablet{
+    @include tablet {
       font-size: vw(14px, $tablet);
       border-width: vw(2px, $tablet);
+    }
+
+    @include mobile{
+      font-size: vw(14px, $mobile);
+      border-width: vw(2px, $mobile);
     }
 
     &::before {
@@ -181,9 +197,13 @@ a {
         height: vw(6.5px, $desktop);
       }
 
-      @include tablet{
+      @include tablet {
         width: vw(9.5px, $tablet);
         height: vw(6.5px, $tablet);
+      }
+      @include mobile{
+        width: vw(11px, $mobile);
+        height: vw(8px, $mobile);
       }
     }
 
@@ -206,9 +226,7 @@ a {
       border-width: vw(1px, $desktop);
     }
 
-    @include tablet{
-
-    }
+    @include tablet {}
   }
 }
 
@@ -262,6 +280,12 @@ a {
     height: vw(51px, $tablet);
   }
 
+  @include mobile {
+    font-size: vw(11px, $mobile);
+    width: vw(159px, $mobile);
+    height: vw(34px, $mobile);
+  }
+
   & svg {
     width: 100%;
     height: 100%;
@@ -311,9 +335,13 @@ a {
     margin-bottom: vw(36px, $desktop);
   }
 
-  @include tablet{
+  @include tablet {
     font-size: vw(34px, $tablet);
     margin-bottom: 0;
+  }
+
+  @include mobile{
+    font-size: vw(20px, $mobile);
   }
 }
 
@@ -339,11 +367,19 @@ a {
     padding: vw(6px, $desktop) vw(63px, $desktop);
   }
 
-  @include tablet{
+  @include tablet {
     margin-top: vw(24px, $tablet);
     border-width: vw(2px, $tablet);
     font-size: vw(14px, $tablet);
     padding: vw(9px, $tablet) vw(70px, $tablet);
+  }
+
+  @include mobile{
+    margin-top: vw(32px, $mobile);
+    border-width: vw(2px, $mobile);
+    font-size: vw(14px, $mobile);
+    padding: vw(9px, $mobile) vw(127px, $mobile);
+    width: 100%;
   }
 }
 
@@ -372,6 +408,13 @@ a {
     border-radius: vw(2px, $tablet);
     padding: vw(8px, $tablet) vw(24px, $tablet);
     font-size: vw(16px, $tablet);
+  }
+
+  @include mobile {
+    border-width: vw(1px, $mobile);
+    border-radius: vw(2px, $mobile);
+    padding: vw(8px, $mobile) vw(24px, $mobile);
+    font-size: vw(16px, $mobile);
   }
 
   @media(hover:hover) {
@@ -412,6 +455,12 @@ a {
     font-size: vw(16px, $tablet);
     padding: vw(8px, $tablet) vw(64px, $tablet);
   }
+
+  @include mobile {
+    border-radius: vw(2px, $mobile);
+    padding: vw(8px, $mobile) vw(64px, $mobile);
+    font-size: vw(16px, $mobile);
+  }
 }
 
 .mt134 {
@@ -419,6 +468,10 @@ a {
 
   @include haval-desc {
     margin-top: vw(134px, $desktop);
+  }
+
+  @include mobile{
+    margin-top: vw(80px, $mobile);
   }
 }
 
@@ -429,7 +482,6 @@ a {
 
 .custom-select select {
   appearance: none;
-  /* Убираем стандартный вид */
   -webkit-appearance: none;
   -moz-appearance: none;
   background: none;
@@ -438,7 +490,6 @@ a {
   background: #f7f8f9;
 }
 
-/* Контейнер для кастомной иконки */
 .custom-select::after {
   content: "";
   position: absolute;
@@ -458,10 +509,16 @@ a {
     height: vw(9px, $desktop);
   }
 
-  @include tablet{
+  @include tablet {
     right: vw(10px, $tablet);
     width: vw(16px, $tablet);
     height: vw(9px, $tablet);
+  }
+
+  @include mobile{
+    right: vw(10px, $mobile);
+    width: vw(16px, $mobile);
+    height: vw(9px, $mobile);
   }
 }
 
@@ -484,9 +541,14 @@ a {
     padding: vw(8px, $desktop) vw(24px, $desktop);
   }
 
-  @include tablet{
+  @include tablet {
     font-size: vw(15px, $tablet);
     padding: vw(8px, $tablet) vw(24px, $tablet);
+  }
+
+  @include mobile{
+    font-size: vw(15px, $mobile);
+    padding: vw(6.5px, $mobile) vw(24px, $mobile);
   }
 
   @media(hover:hover) {
@@ -517,4 +579,14 @@ a {
     background: #f7f8f9;
     opacity: 1;
   }
+}
+
+body:has(.header.active) {
+  section {
+    background: rgba(98, 105, 112, 0.16);
+  }
+}
+
+section {
+  transition: all 0.3s linear;
 }

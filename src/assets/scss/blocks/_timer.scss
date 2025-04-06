@@ -17,6 +17,10 @@
         top: vw(-90px, $tablet);
     }
 
+    @include mobile{
+        top: vw(-60px, $mobile);
+    }
+
     & .project_title {
         font-family: var(--second-family);
         font-weight: 500;
@@ -38,6 +42,13 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        @include mobile{
+            font-size: vw(17px, $mobile);
+            max-width: vw(295px, $mobile);
+            margin: unset;
+            margin-bottom: vw(26px, $mobile);
         }
     }
 }
@@ -62,6 +73,13 @@
         padding: vw(16px, $tablet) 0 0;
     }
 
+    @include mobile{
+        padding-top: vw(16px, $mobile);
+        min-width: vw(311px, $mobile);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     & .grid-row {
         grid-template-columns: 115px 1fr;
         gap: 32px;
@@ -77,6 +95,10 @@
             gap: vw(32px, $tablet);
         }
 
+        @include mobile{
+            grid-template-columns: 1fr;
+            gap: vw(6px, $mobile);
+        }
     }
 }
 
@@ -94,6 +116,10 @@
 
     @include tablet {
         font-size: vw(18px, $tablet);
+    }
+
+    @include mobile{
+        font-size: vw(18px, $mobile);
     }
 }
 
@@ -120,6 +146,14 @@
         border-width: vw(1px, $tablet);
     }
 
+    @include mobile{
+        justify-content: space-between;
+        padding: vw(20px, $mobile);
+        gap: vw(8px, $mobile);
+        border-width: vw(1px, $mobile);
+        max-width: vw(311px, $mobile);
+    }
+
     & strong {
         font-weight: 700;
         font-size: 24px;
@@ -132,6 +166,10 @@
 
         @include tablet {
             font-size: vw(18px, $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(18px, $mobile);
         }
     }
 
@@ -147,6 +185,10 @@
 
         @include tablet {
             font-size: vw(18px, $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(18px, $mobile);
         }
     }
 
@@ -166,6 +208,10 @@
             border: vw(1px, $tablet) solid #bdc3c6;
             height: vw(1px, $tablet);
         }
+
+        @include mobile{
+            border: none;
+        }
     }
 }
 
@@ -179,6 +225,13 @@
 
     @include haval-desc {
         padding: 0 vw(61px, $desktop);
+    }
+
+    @include mobile{
+        padding: 0;
+        max-width: vw(311px, $mobile);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     & .flex-row.--inputs {
@@ -197,6 +250,12 @@
             grid-template-columns: repeat(2, 1fr);
             gap: vw(12px, $tablet);
             row-gap: vw(16px, $tablet);
+        }
+
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            gap: vw(12px, $mobile);
         }
     }
 
@@ -238,10 +297,21 @@
         gap: vw(8px, $tablet);
     }
 
+    @include mobile{
+        gap: vw(7px, $mobile);
+        align-items: flex-start;
+        margin-top: vw(12px, $mobile);
+    }
+
     & svg {
         @include tablet {
             width: vw(12px, $tablet);
             height: vw(12px, $tablet);
+        }
+
+        @include mobile{
+            width: vw(12px, $mobile);
+            height: vw(12px, $mobile);
         }
     }
 }
@@ -262,6 +332,10 @@
         font-size: vw(12px, $tablet);
     }
 
+    @include mobile{
+        font-size: vw(11px, $mobile);
+    }
+
     & a {
         text-decoration: underline;
         text-decoration-skip-ink: none;
@@ -280,6 +354,26 @@
         transform: translateY(vw(20px, $desktop));
         right: vw(6px, $desktop);
         left: vw(6px, $desktop);
+    }
+
+    @include mobile{
+        right: vw(16px, $mobile);
+        left : vw(16px, $mobile);
+        transform: translateY(vw(15px, $mobile));
+    }
+
+    &.--desktop{
+        @include mobile{
+            display: none;
+        }
+    }
+
+    &.--mobile{
+        display: none;
+
+        @include mobile{
+            display: block;
+        }
     }
 
     & svg {
@@ -307,6 +401,15 @@
             width: vw(688px, $tablet);
             height: vw(250px, $tablet);
             border-radius: vw(20px, $tablet);
+        }
+
+        @include mobile{
+            width: vw(343px, $mobile);
+            height: vw(365px, $mobile);
+            border-radius: vw(20px, $mobile);
+            margin: unset;
+            top: 0;
+            left: 0;
         }
     }
 }

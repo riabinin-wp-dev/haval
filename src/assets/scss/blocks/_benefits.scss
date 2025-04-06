@@ -20,6 +20,10 @@
             padding: vw(60px, $tablet) 0 vw(40px, $tablet);
             position: relative;
         }
+
+        @include mobile{
+            padding: vw(60px, $mobile) 0;
+        }
     }
 
     & .project_title {
@@ -28,6 +32,12 @@
         @include tablet {
             max-width: vw(500px, $tablet);
             margin-bottom: vw(20px, $tablet);
+        }
+
+        @include mobile{
+            max-width: unset;
+            text-align: center;
+            margin-bottom: vw(20px, $mobile);
         }
     }
 
@@ -38,6 +48,10 @@
 
         @include tablet{
             position: static;
+        }
+
+        @include mobile{
+            display: none;
         }
     }
 }
@@ -62,6 +76,10 @@
         height: vw(410px, $tablet);
         left: vw(-58px, $tablet);
     }
+
+    @include mobile{
+        display: none;
+    }
 }
 
 .benefits_description {
@@ -80,6 +98,11 @@
         margin-bottom: vw(42px, $tablet);
         font-size: vw(15px, $tablet);
     }
+
+    @include mobile{
+        margin-bottom: vw(40px, $mobile);
+        font-size: vw(15px, $mobile);
+    }
 }
 
 .benefits_item_list {
@@ -95,6 +118,11 @@
         gap: vw(20px, $tablet);
         padding-left: vw(320px, $tablet);
         grid-template-columns: 1fr;
+    }
+
+    @include mobile{
+        padding-left: 0;
+        gap: vw(20px, $mobile);
     }
 
     & dl:last-child {
@@ -119,6 +147,17 @@
             align-items: flex-start;
         }
 
+        @include mobile{
+            gap: vw(16px, $mobile);
+            align-items: center;
+        }
+
+        &:last-child{
+            @include mobile{
+                align-items: flex-start;
+            }
+        }
+
         & .flex-column {
             display: flex;
             flex-direction: column;
@@ -130,6 +169,10 @@
 
             @include tablet {
                 gap: vw(5px, $tablet);
+            }
+
+            @include mobile{
+                gap: vw(5px, $mobile);
             }
         }
 
@@ -145,6 +188,10 @@
 
             @include tablet{
                 font-size: vw(13px, $tablet);
+            }
+
+            @include mobile{
+                font-size: vw(13px, $mobile);
             }
         }
     }
@@ -167,6 +214,11 @@
             width: vw(50px, $tablet);
             height: vw(50px, $tablet);
         }
+
+        @include mobile{
+            width: vw(50px, $mobile);
+            height: vw(50px, $mobile);
+        }
     }
 
     & dd {
@@ -180,6 +232,11 @@
         }
         @include tablet {
             font-size: vw(16px, $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(16px, $mobile);
+            text-wrap: balance;
         }
     }
 }

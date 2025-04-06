@@ -53,7 +53,7 @@
                           </svg>
                           <span>Автотрейд. Официальный дилер HAVAL</span>
                     </a>
-                    <div class="header_center">
+                    <div class="header_center" data-menu>
                         <a href="tel:+7 (4942) 496-400" class="header_center_call --info">
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.8" d="M11.7376 9.3478L11.6654 9.21432C11.4632 8.77396 8.97849 8.10675 8.77625 8.09343L8.61734 8.10674C8.31393 8.16007 7.98171 8.41363 7.33168 8.93406C7.20169 9.04082 7.02827 9.06754 6.86937 8.98739C6.0171 8.54703 4.97701 7.66629 4.45694 7.13255C3.89356 6.55879 3.21461 5.61131 2.89681 4.85064C2.83907 4.70385 2.89681 4.54375 3.01239 4.43699C3.74909 3.82311 4.06689 3.52964 4.09581 3.20933C4.11022 3.02251 3.67694 0.660584 3.22902 0.433732L3.09903 0.353681C2.81014 0.180178 2.37675 -0.0733808 1.90004 0.0200763C1.78446 0.0467909 1.66889 0.0868165 1.56782 0.140153C1.25011 0.327155 0.455577 0.834266 0.094435 1.48806C-0.122209 1.90171 -0.22337 5.65145 2.81022 8.81403C5.81492 11.9499 9.52746 12.0834 10.0764 11.9766H10.0908L10.1341 11.9633C10.8853 11.7097 11.521 11.0559 11.7665 10.7757C12.2143 10.2819 11.911 9.68139 11.7376 9.34778L11.7376 9.3478Z" fill="#626970" />
@@ -78,6 +78,11 @@
                     <div class="header_right">
                         <button class="btn-reset project_link">Обратный звонок</button>
                     </div>
+                    <button type="button" class="header_burger" data-burger onclick="toggleMenu(this);">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>
@@ -151,8 +156,6 @@
               </div>
             </section>
             
-            
-            
             <section class="section models">
               <div class="section timer container">
                 <div class="timer_top">
@@ -197,12 +200,16 @@
                   </div>
                 </div>
                 <div class="timer_border">
-                  <svg class="timer_border" width="1180" height="247" preserveAspectRatio="none"  viewBox="0 0 1180 247" fill="none"
+                  <svg class="timer_border --desktop" width="1180" height="247" preserveAspectRatio="none"  viewBox="0 0 1180 247" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M1130 3H1157C1168.05 3 1177 11.9543 1177 23V224C1177 235.046 1168.05 244 1157 244H23C11.9543 244 3 235.046 3 224V23C3 11.9543 11.9543 3 23 3H50"
                       stroke="#00CABF" stroke-width="6" stroke-linecap="round" />
                   </svg>
+                  <svg class="timer_border --mobile" width="347" height="369" viewBox="0 0 347 369" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M331.268 2V2C338.852 2 345 8.14789 345 15.7317V347C345 358.046 336.046 367 325 367H22C10.9543 367 2 358.046 2 347V15.7317C2 8.14789 8.14788 2 15.7317 2V2" stroke="#00CABF" stroke-width="4" stroke-linecap="round" />
+                  </svg>
+            
                 </div>
               </div>
               <div class="container">
@@ -216,7 +223,7 @@
                         <img src="./assets/images/models/GWM POER side 1.png" alt="" width="369" height="208">
                       </div>
                     </div>
-                    <hr>
+                    <hr style="background-color: #cfcfcf;">
                     <div class="models_bottom">
                       <span class="models_bottom_price">от 1 799 000 ₽</span>
                       <dl class="h-reset">
@@ -246,7 +253,7 @@
                         <img src="./assets/images/models/GWM POER side 2.png" alt="" width="369" height="208">
                       </div>
                     </div>
-                    <hr>
+                    <hr style="background-color: #cfcfcf;">
                     <div class="models_bottom">
                       <span class="models_bottom_price">от 1 799 000 ₽</span>
                       <dl class="h-reset">
@@ -276,7 +283,7 @@
                         <img src="./assets/images/models/GWM POER side 3.png" alt="" width="369" height="208">
                       </div>
                     </div>
-                    <hr>
+                    <hr style="background-color: #5e6b7b;">
                     <div class="models_bottom">
                       <span class="models_bottom_price">от 1 799 000 ₽</span>
                       <dl class="h-reset">
@@ -306,7 +313,7 @@
                         <img src="./assets/images/models/GWM POER side 4.png" alt="" width="369" height="208">
                       </div>
                     </div>
-                    <hr>
+                    <hr style="background-color: #822311;">
                     <div class="models_bottom">
                       <span class="models_bottom_price">от 1 799 000 ₽</span>
                       <dl class="h-reset">
@@ -566,12 +573,16 @@
             <section class="section quality mt134">
               <div class="container">
                 <div class="quality_inner">
-                  <div class="img-wrap">
+                  <div class="img-wrap --desktop">
                     <img src="./assets/images/quality/Rectangle304.png" alt="Гарантия HAVAL - 5 лет поддержки" width="472"
                       height="324" loading="lazy">
                   </div>
                   <div class="quility_inner_side">
                     <h2 class="project_title">Гарантия HAVAL - 5 лет поддержки</h2>
+                    <div class="img-wrap --mobile">
+                      <img src="./assets/images/quality/Rectangle304.png" alt="Гарантия HAVAL - 5 лет поддержки" width="472"
+                        height="324" loading="lazy">
+                    </div>
                     <p class="quality_desc">Полная уверенность в наших автомобилях, а также высокое качество производства и
                       компонентов позволяет нам гарантировать 5 лет поддержки для вашего автомобиля HAVAL: </p>
                     <div class="quality_inner_items">
@@ -827,6 +838,12 @@
                 </div>
               </div>
             </section>
+            
+            <script>
+              function toggleMenu(element){
+                element.closest('header').classList.toggle('active')
+              }
+            </script>
         </main>
         <footer class="footer mt134">
             <a href="#header" class="footer_to_top btn-reset">
@@ -917,11 +934,14 @@
                 </div>
             </div>
             <div class="footer_bg">
-                <svg width="1366" height="375" viewBox="0 0 1366 375" preserveAspectRatio="none"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="--desktop" width="1366" height="375" viewBox="0 0 1366 375" preserveAspectRatio="none"  fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.1"
                         d="M683 55C707.891 55 728.92 38.4653 735.703 15.7804C738.234 7.31417 745.163 0 754 0H1366V375H0V0H612C620.837 0 627.766 7.31417 630.297 15.7804C637.08 38.4653 658.109 55 683 55Z"
                         fill="#626970" />
                 </svg>
+                <svg class="--mobile" width="375" height="779" viewBox="0 0 375 779" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M149.966 9.94072C148.895 4.52277 144.523 3.92608e-06 139 3.77605e-06L0 0V779H375V0H237C231.477 0 227.105 4.52277 226.034 9.94071C222.094 29.8677 206.561 44.7437 188 44.7437C169.439 44.7437 153.906 29.8677 149.966 9.94072Z" fill="#F3F5F6" />
+                  </svg>
             </div>
         </footer>
     </div>

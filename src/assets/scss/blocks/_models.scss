@@ -14,6 +14,10 @@
         padding-top: vw(288px, $tablet);
     }
 
+    @include mobile{
+        padding-top: vw(374px, $mobile);
+    }
+
     & .grid-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -27,11 +31,20 @@
             grid-template-columns: repeat(2, 1fr);
             gap: vw(24px, $tablet);
         }
+
+        @include mobile{
+            grid-template-columns: 1fr;
+            gap: vw(32px, $mobile);
+        }
     }
 
     & .project_title {
         @include tablet {
             margin-bottom: vw(60px, $tablet);
+        }
+
+        @include mobile{
+            margin-bottom: vw(20px, $mobile);
         }
     }
 
@@ -48,6 +61,10 @@
 
         @include tablet {
             height: vw(2px, $tablet);
+        }
+
+        @include mobile{
+            height: vw(2px, $mobile);
         }
     }
 }
@@ -77,6 +94,11 @@
             width: vw(333px, $tablet);
             height: vw(202px, $tablet);
         }
+
+        @include mobile{
+            width: vw(343px, $mobile);
+            height: vw(208px, $mobile);
+        }
     }
 }
 
@@ -93,14 +115,14 @@
 
     @include haval-desc {
         width: 100%;
-        // width: vw(371px, $desktop);
         height: vw(204px, $desktop);
     }
 
     @include tablet {
-        width: 100%;
-        // width: vw(332px, $tablet);
         height: vw(204px, $tablet);
+    }
+    @include mobile{
+        height: vw(204px, $mobile);
     }
 }
 
@@ -125,6 +147,12 @@
         font-size: vw(18px, $tablet);
         margin-bottom: vw(-10px, $tablet);
     }
+
+    @include mobile{
+        padding: vw(25px, $mobile) vw(30px, $mobile);
+        font-size: vw(18px, $mobile);
+        margin-bottom: vw(-10px, $mobile);
+    }
 }
 
 .models_bottom_price {
@@ -147,6 +175,12 @@
         margin-top: vw(16px, $tablet);
         margin-bottom: vw(12px, $tablet);
     }
+
+    @include mobile{
+        font-size: vw(18px, $mobile);
+        margin-top: vw(16px, $mobile);
+        margin-bottom: vw(12px, $mobile);
+    }
 }
 
 .models_bottom dl {
@@ -160,7 +194,10 @@
 
     @include tablet{
         gap: vw(10px, $tablet);
+    }
 
+    @include mobile{
+        gap: vw(10px, $mobile);
     }
 
     &:not(:last-child) {
@@ -172,7 +209,10 @@
 
         @include tablet{
             margin-bottom: vw(12px, $tablet);
-    
+        }
+
+        @include mobile{
+            margin-bottom: vw(12px, $mobile);
         }
     }
 
@@ -191,6 +231,10 @@
             width: vw(18px, $tablet);
             height: vw(18px, $tablet);
         }
+        @include mobile{
+            width: vw(18px, $mobile);
+            height: vw(18px, $mobile);
+        }
     }
 
     & dd {
@@ -208,6 +252,9 @@
 
         @include tablet {
             font-size: vw(14px, $tablet);
+        }
+        @include mobile{
+            font-size: vw(14px, $mobile);
         }
 
         & small {
@@ -246,5 +293,22 @@
     @include tablet{
         margin-top: vw(24px, $tablet);
         gap: vw(8px, $tablet);
+    }
+
+    @include mobile{
+        margin-top: vw(24px, $mobile);
+        gap: vw(8px, $mobile);
+    }
+
+    & .project_link{
+
+        &:first-child{
+            @include mobile{
+                border: vw(2px, $mobile) solid var(--accent-color);
+            }
+        }
+        @include mobile{
+            font-size: vw(14px, $mobile);
+        }
     }
 }

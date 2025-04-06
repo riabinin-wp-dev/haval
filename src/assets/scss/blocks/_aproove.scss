@@ -20,6 +20,10 @@
             font-family: var(--font-family);
         }
 
+        @include mobile{
+            margin-bottom: vw(8px, $mobile);
+        }
+
         & span {
             color: var(--accent-color);
         }
@@ -39,7 +43,10 @@
             height: vw(51px, $tablet);
         }
 
-        & svg {}
+        @include mobile{
+            width: vw(234px, $mobile);
+            height: vw(34px, $mobile);
+        }
     }
 
     & small {
@@ -60,6 +67,10 @@
             font-size: vw(15px, $tablet);
             margin-bottom: vw(20px, $tablet);
         }
+
+        @include mobile{
+            font-size: vw(15px, $mobile);
+        }
     }
 }
 
@@ -79,5 +90,10 @@
     @include tablet{
         min-height: vw(640px, $tablet);
         padding: vw(40px, $tablet) 0;
+    }
+
+    @include mobile{
+        min-height: vw(640px, $mobile);
+        padding: vw(16px, $mobile) 0 vw(32px, $mobile);
     }
 }

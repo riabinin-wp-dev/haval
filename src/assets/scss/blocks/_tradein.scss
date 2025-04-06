@@ -9,6 +9,11 @@
         @include haval-desc{
             gap: vw(130px, $desktop);
         }
+
+        @include mobile{
+            grid-template-columns: 1fr;
+            gap: vw(21px, $mobile);
+        }
     }
 
     & .project_title {
@@ -18,7 +23,11 @@
             margin-bottom:  vw(36px, $desktop);
         }  
         @include tablet{
-            margin-bottom:  vw(12px, $desktop);
+            margin-bottom:  vw(12px, $tablet);
+        }
+
+        @include mobile{
+            margin-bottom: vw(12px, $mobile);
         }
     }
 }
@@ -39,6 +48,11 @@
         margin-bottom:  vw(22px, $tablet);
         font-size: vw(15px , $tablet);
     }
+
+    @include mobile{
+        margin-bottom:  vw(28px, $mobile);
+        font-size: vw(15px , $mobile);
+    }
 }
 
 .tradein_form {
@@ -53,6 +67,10 @@
         
         @include tablet{
             gap: vw(16px, $desktop);
+        }
+
+        @include mobile{
+            gap: vw(16px, $mobile);
         }
     }
 
@@ -74,6 +92,10 @@
             font-size: vw(15px, $tablet);
         }
 
+        @include mobile{
+            font-size: vw(15px, $mobile);
+        }
+
         &::placeholder {
             color: rgba(98, 105, 112, 0.4);
         }
@@ -81,6 +103,10 @@
 
     & .timer_inner_form_wrapper {
         justify-content: center;
+
+        @include mobile{
+            margin-top: vw(-8px, $mobile);
+        }
     }
 }
 
@@ -115,6 +141,14 @@
         margin-top: vw(48px, $tablet);
     }
 
+    @include mobile{
+        border-radius: vw(7px, $mobile);
+        width: 100%;
+        height: vw(219px, $mobile);
+        padding: vw(14px, $mobile);
+        margin-top: vw(48px, $mobile);
+    }
+
     & img {
         width: 100vw;
         max-width: 614px;
@@ -133,6 +167,12 @@
             max-width: vw(404px, $tablet);
             left: vw(0px, $tablet);
             bottom: vw(0px, $tablet);
+        }
+
+        @include mobile{
+            max-width: vw(369px, $mobile);
+            left: vw(13.79px, $mobile);
+            bottom: vw(-37px, $mobile);
 
         }
     }
@@ -160,5 +200,11 @@
         font-size: vw(12px, $tablet);
         bottom: vw(14px, $tablet);
         left: vw(14px, $tablet);
+    }
+
+    @include mobile{
+        font-size: vw(11px, $mobile);
+        bottom: vw(14px, $mobile);
+        left: vw(14px, $mobile);
     }
 }

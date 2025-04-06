@@ -17,6 +17,11 @@
             padding-top: vw(80px, $tablet);
             padding-bottom: vw(27px, $tablet);
         }
+
+        @include mobile {
+            padding-top: vw(80px, $mobile);
+            padding-bottom: vw(27px, $mobile);
+        }
     }
 }
 
@@ -27,10 +32,28 @@
     transform: translateX(-50%);
     z-index: -1;
 
+    & svg.--mobile{
+        display: none;
+
+        @include mobile{
+            display: block;
+        }
+    }
+
+    & svg.--desktop{
+        @include mobile{
+            display: none;
+        }
+    }
+
     & svg {
         @include tablet {
             height: 100%;
             min-height: vw(488px, $tablet);
+        }
+
+        @include mobile {
+            min-height: vw(779px, $mobile);
         }
     }
 
@@ -58,6 +81,10 @@
         gap: vw(24px, $tablet);
     }
 
+    @include mobile {
+        gap: vw(16px, $mobile);
+    }
+
     & nav {
         @include tablet {
             order: -1;
@@ -80,6 +107,12 @@
             gap: vw(16px, $tablet);
         }
 
+        @include mobile {
+            grid-column: 2 span;
+            gap: vw(16px, $mobile);
+            margin-top: vw(12px, $mobile);
+        }
+
     }
 
     & li {
@@ -97,6 +130,10 @@
         @include tablet {
             font-size: vw(16px, $tablet);
         }
+
+        @include mobile{
+            font-size: vw(16px, $mobile);
+        }
     }
 }
 
@@ -106,6 +143,11 @@
 
     @include haval-desc {
         gap: vw(20px, $desktop);
+    }
+
+    @include mobile{
+        gap: vw(20px, $mobile);
+        grid-column: 2 span;
     }
 
     & ul {
@@ -128,6 +170,10 @@
 
         @include tablet {
             font-size: vw(16px, $tablet);
+        }
+
+        @include mobile{
+            font-size: vw(16px, $mobile);
         }
     }
 }
@@ -154,6 +200,19 @@
         margin-left: 0;
     }
 
+    @include mobile {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: vw(12px, $mobile);
+        column-gap: vw(20px, $mobile) !important;
+    }
+
+    & li{
+       
+    }
+
+
+
     & a {
         font-weight: 500;
         font-size: 16px;
@@ -167,6 +226,10 @@
 
         @include tablet {
             font-size: vw(16px, $tablet);
+        }
+
+        @include mobile {
+            font-size: vw(14px, $mobile);
         }
     }
 }
@@ -189,6 +252,12 @@
         grid-template-columns: vw(305px, $tablet) 1fr;
     }
 
+    @include mobile{
+        grid-template-columns: 1fr;
+        gap: 20.5px;
+        margin-top: vw(47px, $mobile);
+    }
+
     & p {
         margin: 0;
         font-family: var(--font-family);
@@ -206,6 +275,10 @@
         @include tablet {
             font-size: vw(11px, $tablet);
         }
+
+        @include mobile{
+            font-size: vw(11px, $mobile);
+        }
     }
 }
 
@@ -220,7 +293,17 @@
 
     @include tablet {
         gap: vw(4px, $tablet);
+    }
 
+    @include mobile{
+        gap: vw(4.5px, $mobile);
+    }
+
+    & svg{
+        @include mobile{
+            width: vw(132px, $mobile);
+            height: vw(16px, $mobile);
+        }
     }
 
     & span {
@@ -239,6 +322,10 @@
             font-size: vw(14px, $tablet);
             opacity: 1;
         }
+
+        @include mobile{
+            font-size: vw(15px, $mobile);
+        }
     }
 }
 
@@ -256,6 +343,13 @@
         display: flex;
         gap: vw(10px, $tablet);
         margin-top: vw(24px, $tablet);
+    }
+
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        gap: vw(12px, $mobile);
+        align-items: center;
     }
 
     & small,
@@ -289,6 +383,10 @@
             font-size: vw(12px, $tablet);
         }
 
+        @include mobile{
+            font-size: vw(12px, $mobile);
+        }
+
         &:first-child {
             padding-left: 15px;
 
@@ -304,6 +402,10 @@
         &:last-child {
             display: block;
             margin-left: auto;
+
+            @include mobile{
+                margin-left: unset;
+            }
         }
 
         & span {
@@ -328,6 +430,8 @@
 
     @include tablet {
         font-size: vw(12px, $tablet);
-
+    }
+    @include mobile{
+        font-size: vw(12px, $mobile);
     }
 }
