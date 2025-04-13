@@ -224,4 +224,10 @@
         display: flex;
         justify-content: flex-end;
     }
+
+    & .project_link{
+        @include tablet{
+            font-size: vw(12px, $tablet);
+        }
+    }
 }

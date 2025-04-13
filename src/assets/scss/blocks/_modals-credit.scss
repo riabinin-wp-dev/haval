@@ -1,0 +1,107 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
+.modal_credit {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba($color: #c7c7c7, $alpha: 0.98);
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    display: none;
+
+    &.active {
+        display: flex;
+
+        & .overlay {
+            display: block;
+        }
+    }
+
+    &.animation {
+        opacity: 1;
+
+        & .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    & span,
+    & .project_input {
+        width: 100%;
+    }
+
+
+    & .overlay {
+        display: none;
+        border-radius: 16px;
+        min-width: 371px;
+        min-height: 321px;
+        background: #fff;
+        position: relative;
+        padding: 40px 19px;
+        opacity: 0;
+        transition: all 0.3s linear;
+        transform: translateY(30%);
+
+        @include haval-desc {
+            border-radius: vw(16px, $desktop);
+            min-width: vw(371px, $desktop);
+            min-height: vw(321px, $desktop);
+            padding: vw(40px, $desktop) vw(19px, $desktop);
+        }
+
+        @include tablet {
+            border-radius: vw(16px, $tablet);
+            min-width: vw(371px, $tablet);
+            min-height: vw(321px, $tablet);
+            padding: vw(40px, $tablet) vw(19px, $tablet);
+        }
+
+        @include mobile {
+            min-width: unset;
+            max-width: 95vw;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: unset;
+            padding: vw(25px, $mobile) vw(20px, $mobile);
+        }
+    }
+
+    & .flex-column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 16px;
+
+        @include haval-desc {
+            gap: vw(16px, $desktop);
+        }
+
+        @include tablet {
+            gap: vw(16px, $tablet);
+        }
+
+        @include mobile {
+            gap: vw(7px, $mobile);
+        }
+    }
+
+    & .project_submit {
+        width: 100%;
+        max-width: none;
+    }
+
+    .modal_close {
+
+        @include mobile {
+            transform: translate3d(20%, -120%, 0);
+        }
+    }
+}

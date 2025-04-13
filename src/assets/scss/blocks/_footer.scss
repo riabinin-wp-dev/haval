@@ -32,16 +32,16 @@
     transform: translateX(-50%);
     z-index: -1;
 
-    & svg.--mobile{
+    & svg.--mobile {
         display: none;
 
-        @include mobile{
+        @include mobile {
             display: block;
         }
     }
 
-    & svg.--desktop{
-        @include mobile{
+    & svg.--desktop {
+        @include mobile {
             display: none;
         }
     }
@@ -131,8 +131,35 @@
             font-size: vw(16px, $tablet);
         }
 
-        @include mobile{
+        @include mobile {
             font-size: vw(16px, $mobile);
+        }
+
+        & a {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                bottom: vw(-3px, $desktop);
+                left: 0;
+                right: 0;
+                z-index: 1;
+                background-color: #121314;
+                content: '';
+                opacity: 0;
+                height: vw(1px, $desktop);
+                transition: opacity 0.3s linear;
+            }
+
+            @media (hover:hover) {
+                &:hover {
+                    color: #121314;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -145,7 +172,7 @@
         gap: vw(20px, $desktop);
     }
 
-    @include mobile{
+    @include mobile {
         gap: vw(20px, $mobile);
         grid-column: 2 span;
     }
@@ -172,7 +199,7 @@
             font-size: vw(16px, $tablet);
         }
 
-        @include mobile{
+        @include mobile {
             font-size: vw(16px, $mobile);
         }
     }
@@ -207,9 +234,7 @@
         column-gap: vw(20px, $mobile) !important;
     }
 
-    & li{
-       
-    }
+    & li {}
 
 
 
@@ -219,6 +244,32 @@
         line-height: 145%;
         letter-spacing: -0.01em;
         color: #626970;
+        // text-underline-offset: vw(3px, $desktop);
+        transition: all 0.3s linear;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: vw(-3px, $desktop);
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background-color: #121314;
+            content: '';
+            opacity: 0;
+            height: vw(1px, $desktop);
+            transition: opacity 0.3s linear;
+        }
+
+        @media (hover:hover) {
+            &:hover {
+                color: #121314;
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
 
         @include haval-desc {
             font-size: vw(16px, $desktop);
@@ -231,6 +282,7 @@
         @include mobile {
             font-size: vw(14px, $mobile);
         }
+
     }
 }
 
@@ -252,7 +304,7 @@
         grid-template-columns: vw(305px, $tablet) 1fr;
     }
 
-    @include mobile{
+    @include mobile {
         grid-template-columns: 1fr;
         gap: 20.5px;
         margin-top: vw(47px, $mobile);
@@ -276,7 +328,7 @@
             font-size: vw(11px, $tablet);
         }
 
-        @include mobile{
+        @include mobile {
             font-size: vw(11px, $mobile);
         }
     }
@@ -295,12 +347,12 @@
         gap: vw(4px, $tablet);
     }
 
-    @include mobile{
+    @include mobile {
         gap: vw(4.5px, $mobile);
     }
 
-    & svg{
-        @include mobile{
+    & svg {
+        @include mobile {
             width: vw(132px, $mobile);
             height: vw(16px, $mobile);
         }
@@ -323,7 +375,7 @@
             opacity: 1;
         }
 
-        @include mobile{
+        @include mobile {
             font-size: vw(15px, $mobile);
         }
     }
@@ -345,7 +397,7 @@
         margin-top: vw(24px, $tablet);
     }
 
-    @include mobile{
+    @include mobile {
         display: flex;
         flex-direction: column;
         gap: vw(12px, $mobile);
@@ -364,6 +416,14 @@
     & a {
         display: block;
         margin: 0 auto;
+        transition: color 0.3s linear;
+
+
+        @media (hover:hover) {
+            &:hover {
+                color: #121314;
+            }
+        }
     }
 
     & small {
@@ -383,7 +443,7 @@
             font-size: vw(12px, $tablet);
         }
 
-        @include mobile{
+        @include mobile {
             font-size: vw(12px, $mobile);
         }
 
@@ -399,18 +459,25 @@
             }
         }
 
-        &:last-child {
-            display: block;
-            margin-left: auto;
-
-            @include mobile{
-                margin-left: unset;
-            }
-        }
-
         & span {
             text-decoration: underline;
         }
+    }
+}
+
+.footer_botom_creator {
+    display: block;
+    margin-left: auto;
+    position: relative;
+
+    @include mobile {
+        margin-left: unset;
+    }
+
+    & a{
+        position: absolute;
+        inset: 0;
+        z-index: 1;
     }
 }
 
@@ -431,7 +498,8 @@
     @include tablet {
         font-size: vw(12px, $tablet);
     }
-    @include mobile{
+
+    @include mobile {
         font-size: vw(12px, $mobile);
     }
 }

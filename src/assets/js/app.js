@@ -34,9 +34,7 @@ function init_slider(){
   emblaApi.on('destroy', removePrevNextBtnsClickHandlers)
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
   init_slider();
-})
 /**
  * карты
  */

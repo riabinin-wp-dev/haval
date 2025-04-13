@@ -9,6 +9,7 @@
     & .project_title {
         color: #fff;
         margin-bottom: 14px;
+        font-family: var(--font-family);
 
         @include haval-desc {
             margin-bottom: vw(14px, $desktop);
@@ -17,7 +18,6 @@
         @include tablet {
             margin-bottom: vw(12px, $tablet);
             font-weight: 500;
-            font-family: var(--font-family);
         }
 
         @include mobile{
@@ -46,6 +46,14 @@
         @include mobile{
             width: vw(234px, $mobile);
             height: vw(34px, $mobile);
+        }
+
+        @media (hover:hover){
+            &:hover{
+                & path{
+                    fill: #09BAB0;
+                }
+            }
         }
     }
 

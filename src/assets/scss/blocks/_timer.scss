@@ -62,6 +62,7 @@
     margin: 0 auto 27px;
     max-width: max-content;
     min-width: 1078px;
+    position: relative;
 
     @include haval-desc {
         padding: vw(18px, $desktop) 0;
@@ -78,6 +79,41 @@
         min-width: vw(311px, $mobile);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    &::before, &::after{
+        position: absolute;
+        right: 100%;
+        top: 47px;
+        width: 20px;
+        height: 20px;
+        z-index: 10;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: '';
+
+        @media(max-width:1920px){
+            top: 43px;
+            // top: vw(57px, 1920px);
+        }
+
+        @include haval-desc{
+            top: vw(60px, $desktop);
+        }
+
+        @include for-desktop{
+            display: none;
+        }
+    }
+
+    &::before{
+        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cpath%20d%3D%22M10%2010H0C5.52285%2010%2010%205.52285%2010%200V10Z%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E');
+    }
+        &::after{
+            right: unset;
+            left: 100%;
+        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cpath%20d%3D%22M0%2010H10C4.47715%2010%200%205.52285%200%200V10Z%22%20fill%3D%22white%22%20%2F%3E%0A%3C%2Fsvg%3E');
     }
 
     & .grid-row {

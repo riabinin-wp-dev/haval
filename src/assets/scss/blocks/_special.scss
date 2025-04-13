@@ -13,6 +13,7 @@
         margin-bottom: 28px;
         color: #fff;
         letter-spacing: -0.03px;
+        font-family: var(--font-family);
 
         @include haval-desc {
             margin-bottom: vw(28px, $desktop);
@@ -20,7 +21,6 @@
 
         @include tablet {
             margin-bottom: vw(12px, $desktop);
-            font-family: var(--font-family);
         }
 
         @include mobile{

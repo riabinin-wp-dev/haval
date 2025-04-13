@@ -96,10 +96,11 @@
                     style="background-image: url(./assets/images/hero/HAVAL-CCL-CityRoof-KV-21.08.2024\ 3.png);">
                     <div class="container">
                       <h1 class="hero_title">Неделя продаж</h1>
-                      <p class="hero_action">Успейте приобрести с дополнительной выгодой <br>
-                        Только до 7.04.2025
-                      </p>
-                      <button type="button" class="project_more --black">
+                      <div class="hero_action">
+                        <p>Успейте приобрести с дополнительной выгодой <br>
+                          Только до 7.04.2025</p>
+                      </div>
+                      <button type="button" class="project_more --black" data-modal-open="cars">
                         <svg width="240" height="51" viewBox="0 0 240 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M0 0H240L216.316 51H0V0Z" fill="#121314" />
                         </svg>
@@ -200,14 +201,17 @@
                   </div>
                 </div>
                 <div class="timer_border">
-                  <svg class="timer_border --desktop" width="1180" height="247" preserveAspectRatio="none"  viewBox="0 0 1180 247" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                  <svg class="timer_border --desktop" width="1180" height="247" preserveAspectRatio="none" viewBox="0 0 1180 247"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M1130 3H1157C1168.05 3 1177 11.9543 1177 23V224C1177 235.046 1168.05 244 1157 244H23C11.9543 244 3 235.046 3 224V23C3 11.9543 11.9543 3 23 3H50"
                       stroke="#00CABF" stroke-width="6" stroke-linecap="round" />
                   </svg>
-                  <svg class="timer_border --mobile" width="347" height="369" viewBox="0 0 347 369" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M331.268 2V2C338.852 2 345 8.14789 345 15.7317V347C345 358.046 336.046 367 325 367H22C10.9543 367 2 358.046 2 347V15.7317C2 8.14789 8.14788 2 15.7317 2V2" stroke="#00CABF" stroke-width="4" stroke-linecap="round" />
+                  <svg class="timer_border --mobile" width="347" height="369" viewBox="0 0 347 369" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M331.268 2V2C338.852 2 345 8.14789 345 15.7317V347C345 358.046 336.046 367 325 367H22C10.9543 367 2 358.046 2 347V15.7317C2 8.14789 8.14788 2 15.7317 2V2"
+                      stroke="#00CABF" stroke-width="4" stroke-linecap="round" />
                   </svg>
             
                 </div>
@@ -245,8 +249,8 @@
                       <a href="" class="project_link instock">Авто в наличии</a>
                     </div>
                   </li>
-                  <li>
-                    <div class="models_top">
+                  <li data-id="500">
+                    <div class="models_top" data-modal-open="gwm">
                       <div class="models_top_bg" style="background-color: #cfcfcf;"></div>
                       <h3 class="models_title">HAVAL M6</h3>
                       <div class="img-wrap">
@@ -561,7 +565,7 @@
                   <h2 class="project_title">Подберем выгодную кредитную <br> программу на покупку HAVAL <br> с <span>честной</span>
                     рассрочкой на 3 года</h2>
                   <small>Одобрение по кредиту более 90% </small>
-                  <button type="button" class="project_more --accent">
+                  <button type="button" class="project_more --accent" data-modal-open="credit">
                     <svg width="370" height="51" viewBox="0 0 370 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M0 0H369.684L346 51H0V0Z" fill="#00CABF" />
                     </svg>
@@ -827,22 +831,363 @@
                       получения подробной информации просьба обращаться в дилерский центр Автотрейд по адресу 2-я Волжская, д. 4 или
                       по телефону +7 4942 496-400. Опубликованная на данном сайте информация может быть изменена в любое время без
                       предварительного уведомления.</p>
-                      <p>ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</p>
-                      <p>ООО «Автотрейд» ИНН 4400009742 ОГРН 1224400003398 самостоятельно несет полную ответственность перед
+                    <p>ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</p>
+                    <p>ООО «Автотрейд» ИНН 4400009742 ОГРН 1224400003398 самостоятельно несет полную ответственность перед
                       пользователем сайта, потребителем за всю размещенную на avtotrade-haval.ru информацию, за содержание
                       размещенной информации, за деятельность осуществляемую дилером с использованием сайта, все действия,
                       совершаемые дилером на странице сайта.</p>
             
-                    
+            
                   </div>
                 </div>
               </div>
             </section>
             
+            <section class="automodal" data-modal="gwm">
+              <div class="overlay container">
+                <div class="automodal_inner">
+                  <div class="automodal_inner_slider">
+                    <h3 class="automodal_inner_title">GWM Poer</h3>
+                    <dl class="h-reset automodal_inner_podbor">
+                      <dt>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M13.3333 12.5C14.4217 12.5 15.3483 13.1958 15.6917 14.1667H16.6667C16.8877 14.1667 17.0996 14.2545 17.2559 14.4107C17.4122 14.567 17.5 14.779 17.5 15C17.5 15.221 17.4122 15.433 17.2559 15.5893C17.0996 15.7455 16.8877 15.8333 16.6667 15.8333H15.6917C15.5195 16.3213 15.2002 16.7438 14.7778 17.0427C14.3554 17.3415 13.8508 17.502 13.3333 17.502C12.8159 17.502 12.3112 17.3415 11.8888 17.0427C11.4664 16.7438 11.1472 16.3213 10.975 15.8333H3.33333C3.11232 15.8333 2.90036 15.7455 2.74408 15.5893C2.5878 15.433 2.5 15.221 2.5 15C2.5 14.779 2.5878 14.567 2.74408 14.4107C2.90036 14.2545 3.11232 14.1667 3.33333 14.1667H10.975C11.1474 13.679 11.4668 13.2569 11.8892 12.9584C12.3116 12.6599 12.8161 12.4997 13.3333 12.5ZM6.66667 7.5C7.15749 7.49993 7.63748 7.64435 8.04678 7.91524C8.45608 8.18613 8.77658 8.57151 8.96833 9.02333L9.02417 9.16667H16.6667C16.8791 9.1669 17.0834 9.24823 17.2378 9.39404C17.3923 9.53985 17.4852 9.73913 17.4976 9.95116C17.5101 10.1632 17.4411 10.372 17.3048 10.5349C17.1685 10.6977 16.9751 10.8024 16.7642 10.8275L16.6667 10.8333H9.025C8.857 11.3086 8.54931 11.722 8.14228 12.0193C7.73524 12.3166 7.24786 12.484 6.74404 12.4995C6.24022 12.515 5.74348 12.3779 5.31894 12.1061C4.8944 11.8344 4.56189 11.4407 4.365 10.9767L4.30833 10.8333H3.33333C3.12093 10.8331 2.91664 10.7518 2.76219 10.606C2.60775 10.4602 2.5148 10.2609 2.50236 10.0488C2.48991 9.8368 2.5589 9.62802 2.69522 9.46514C2.83155 9.30226 3.02492 9.19759 3.23583 9.1725L3.33333 9.16667H4.30833C4.48074 8.67904 4.80014 8.25688 5.22252 7.95838C5.64489 7.65988 6.14946 7.49973 6.66667 7.5ZM13.3333 2.5C14.4217 2.5 15.3483 3.19583 15.6917 4.16667H16.6667C16.8877 4.16667 17.0996 4.25446 17.2559 4.41074C17.4122 4.56703 17.5 4.77899 17.5 5C17.5 5.22101 17.4122 5.43298 17.2559 5.58926C17.0996 5.74554 16.8877 5.83333 16.6667 5.83333H15.6917C15.5195 6.32128 15.2002 6.74381 14.7778 7.04268C14.3554 7.34155 13.8508 7.50204 13.3333 7.50204C12.8159 7.50204 12.3112 7.34155 11.8888 7.04268C11.4664 6.74381 11.1472 6.32128 10.975 5.83333H3.33333C3.11232 5.83333 2.90036 5.74554 2.74408 5.58926C2.5878 5.43298 2.5 5.22101 2.5 5C2.5 4.77899 2.5878 4.56703 2.74408 4.41074C2.90036 4.25446 3.11232 4.16667 3.33333 4.16667H10.975C11.1474 3.67904 11.4668 3.25688 11.8892 2.95838C12.3116 2.65988 12.8161 2.49973 13.3333 2.5Z"
+                            fill="#121314" />
+                        </svg>
+                      </dt>
+                      <dd class="h-reset">
+                        Подобрать комплектацию
+                      </dd>
+                    </dl>
+                    <div class="img-wrap">
+                      <img src="./assets/images/modal/Без имени-1 1.png" alt="">
+            
+                    </div>
+                    <!-- slider -->
+            
+                    <!-- slider -->
+                  </div>
+                  <div class="automodal_inner_info">
+                    <h4 class="automodal_info_title">Выбери свой HAVAL! <br> Супервыгоды до конца марта!</h4>
+                    <div class="models_bottom">
+                      <dl class="h-reset">
+                        <dt class="models_bottom_money"></dt>
+                        <dd class="h-reset">Рассрочка на три года</dd>
+                      </dl>
+                      <dl class="h-reset">
+                        <dt class="models_bottom_tradein"></dt>
+                        <dd class="h-reset">Выгодный trade-in</dd>
+                      </dl>
+                      <dl class="h-reset">
+                        <dt class="models_bottom_gift"></dt>
+                        <dd class="h-reset">Сигнализация в подарок <small>3</small></dd>
+                      </dl>
+                      <div class="models_status">
+                        <a href="" class="project_link">Узнать стоимость</a>
+                        <a href="" class="project_link --credit">Рассчитать кредит</a>
+                        <a href="" class="project_link --credit">Оценить по трейд-ин</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="modal_close" data-modal-close aria-label="close modal">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19.5" stroke="#626970" stroke-opacity="0.5" />
+                    <path d="M13.0435 13.0435L26.9565 26.9823" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                      stroke-linecap="round" />
+                    <path d="M13.0435 26.9823L26.9565 13.0435" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </section>
+            
+            <div class="modal_cars" data-modal="cars">
+              <div class="overlay">
+                <div class="modal_cars_top">
+                  <img src="./assets/images/modalCf7/тачкивряд1.webp" alt="cars" width="608" height="204" loading="lazy">
+                </div>
+                <div class="modal_cars_bottom">
+                  <h2 class="modal_car_title">Получите индивидуальное предложение</h2>
+                  <div class="flex-row">
+                    <span>
+                      <input type="text" class="project_input" name="" id="" placeholder="Ваше имя">
+                    </span>
+                    <span>
+                      <input type="tel" class="project_input" name="" id="" placeholder="Ваш телефон">
+                    </span>
+                  </div>
+                  <div class="flex-column">
+                    <input type="submit" class="project_link project_submit" value="Оставить заявку">
+            
+                    <div class="modal_cars_accept_row">
+                      <label class="modal_cars_accept" for="cars_agree">
+                        <input type="checkbox" id="cars_agree" name="cars_agree" class="project_checkbox">
+                      </label>
+                      <span>Я согласен с условиями обработки <a href="">персональных данных</a></span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="modal_close" data-modal-close aria-label="close modal">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19.5" stroke="#626970" stroke-opacity="0.5" />
+                    <path d="M13.0435 13.0435L26.9565 26.9823" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                      stroke-linecap="round" />
+                    <path d="M13.0435 26.9823L26.9565 13.0435" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <div class="modal_credit" data-modal="credit">
+              <div class="overlay">
+                <div class="flex-column">
+                  <span>
+                    <input type="text" class="project_input" name="" id="" placeholder="Ваше имя">
+                  </span>
+                  <span>
+                    <input type="tel" class="project_input" name="" id="" placeholder="Ваш телефон">
+                  </span>
+                  <span>
+                    <input type="text" class="project_input" name="" id="" placeholder="Ваше имя">
+                  </span>
+                  <div class="flex-column">
+                    <input type="submit" class="project_link project_submit" value="Подобрать кредит">
+            
+                    <div class="modal_cars_accept_row">
+                      <label class="modal_cars_accept" for="cars_agree">
+                        <input type="checkbox" id="cars_agree" name="cars_agree" class="project_checkbox">
+                      </label>
+                      <span>Я согласен с условиями обработки <br> <a href="">персональных данных</a></span>
+                    </div>
+                  </div>
+                  <button type="button" class="modal_close" data-modal-close aria-label="close modal">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="20" cy="20" r="19.5" stroke="#626970" stroke-opacity="0.5" />
+                      <path d="M13.0435 13.0435L26.9565 26.9823" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                      <path d="M13.0435 26.9823L26.9565 13.0435" stroke="#626970" stroke-opacity="0.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
             <script>
-              function toggleMenu(element){
+              function toggleMenu(element) {
                 element.closest('header').classList.toggle('active')
               }
+            </script>
+            
+            <script>
+              function showModel(element) {
+                // Проверяем, есть ли уже загруженный Swiper
+                if (typeof Swiper === 'undefined') {
+                  // Загружаем CSS и JS Swiper через CDN
+                  const swiperCSS = document.createElement('link');
+                  swiperCSS.rel = 'stylesheet';
+                  swiperCSS.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+            
+                  const swiperJS = document.createElement('script');
+                  swiperJS.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+            
+                  // Обещание для загрузки ресурсов
+                  const loadResources = new Promise((resolve) => {
+                    swiperJS.onload = resolve;
+                    document.head.appendChild(swiperCSS);
+                    document.head.appendChild(swiperJS);
+                  });
+            
+                  loadResources.then(() => {
+                    initSwiper(element);
+                  });
+                } else {
+                  // Если Swiper уже загружен, сразу инициализируем
+                  initSwiper(element);
+                }
+            
+                function initSwiper(element) {
+                  // Создаем HTML для слайдера
+                  // <div class="swiper automodal-swiper swiper-container mySwiper2">
+                  //   <div class="swiper-wrapper">
+                  //     <div class="swiper-slide swiper_automodal_main">
+                  //       <img src="./assets/images/modal/Без имени-1 1.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide swiper_automodal_main">
+                  //       <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide swiper_automodal_main">
+                  //       <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide swiper_automodal_main">
+                  //       <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide">
+                  //       <img src="./assets/images/modal/Rectangle 300.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide">
+                  //       <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide">
+                  //       <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                  //     </div>
+                  //     <div class="swiper-slide">
+                  //       <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                  //     </div>
+                  //   </div>
+            
+                  // </div>
+                  const sliderHTML = `
+                    <div class="swiper_cars_inner">
+            
+                    
+                      <div class="swiper_bottom">
+                        <div class="swiper-button-prev thumbs-prev">
+                          <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M11 2.55426L5.12383 8.72425C4.9767 8.87873 4.9767 9.12149 5.12383 9.27597L11 15.446L8.56843 18L0.656464 9.68953C0.288808 9.30336 0.288809 8.69664 0.656465 8.31047L8.56843 0L11 2.55426Z"
+                              fill="#626970" />
+                          </svg>
+                        </div>
+                        
+                        <div class=" swiper-container swiper-thumbs mySwiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 300.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 300.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-button-next thumbs-next">
+                          <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M0 2.55426L5.87617 8.72425C6.0233 8.87873 6.0233 9.12149 5.87617 9.27597L0 15.446L2.43157 18L10.3435 9.68953C10.7112 9.30336 10.7112 8.69664 10.3435 8.31047L2.43157 0L0 2.55426Z"
+                              fill="#626970" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+            
+                  // Вставляем слайдер в нужное место
+                  const sliderContainer = element.querySelector('.automodal_inner_slider');
+                  const sliderPlaceholder = document.createElement('div');
+                  sliderPlaceholder.innerHTML = sliderHTML;
+                  sliderContainer.appendChild(sliderPlaceholder);
+            
+                  var swiper = new Swiper(".mySwiper", {
+                    spaceBetween: 0,
+                    slidesPerView: 4,
+                    navigation: {
+                      nextEl: ".swiper-button-next",
+                      prevEl: ".swiper-button-prev",
+                    },
+                    // freeMode: true,
+                    // watchSlidesVisibility: true,
+                    // watchSlidesProgress: true,
+                  });
+                  // var swiper2 = new Swiper(".mySwiper2", {
+                  //   spaceBetween: 0,
+                  //   navigation: {
+                  //     nextEl: ".swiper-button-next",
+                  //     prevEl: ".swiper-button-prev",
+                  //   },
+                  //   thumbs: {
+                  //     swiper: swiper,
+                  //   },
+                  // });
+                  // И связываем основной слайдер с миниатюрами
+                  // mainSwiper.controller.control = thumbSwiper;
+                }
+              }
+            
+              // Пример вызова функции
+              document.addEventListener('DOMContentLoaded', function () {
+                const automodal = document.querySelector('.automodal');
+                if (automodal) {
+                  showModel(automodal);
+                }
+              });
+            </script>
+            
+            <script>
+              class ModalManager {
+                constructor() {
+                  this.animationDelay = 300; // мс
+                  this.init();
+                }
+            
+                init() {
+                  // Обработчики открытия
+                  document.querySelectorAll('[data-modal-open]').forEach(btn => {
+                    btn.removeEventListener('click', this.openHandler); // снять старый
+                    btn.addEventListener('click', this.openHandler.bind(this));
+                  });
+            
+                  // Обработчики закрытия
+                  document.querySelectorAll('[data-modal]').forEach(modal => {
+                    const closeBtn = modal.querySelector('[data-modal-close]');
+                    if (closeBtn) {
+                      closeBtn.removeEventListener('click', this.closeHandler); // снять старый
+                      closeBtn.addEventListener('click', this.closeHandler.bind(this));
+                    }
+                  });
+                }
+            
+                openHandler(event) {
+                  const modalId = event.currentTarget.getAttribute('data-modal-open');
+                  const modal = document.querySelector(`[data-modal="${modalId}"]`);
+            
+                  if (modal) {
+                    modal.classList.add('active');
+                    setTimeout(() => {
+                      modal.classList.add('animation');
+                    }, this.animationDelay);
+                  }
+                }
+            
+                closeHandler(event) {
+                  const modal = event.currentTarget.closest('[data-modal]');
+                  if (modal) {
+                    modal.classList.remove('animation');
+                    setTimeout(() => {
+                      modal.classList.remove('active');
+                    }, this.animationDelay);
+                  }
+                }
+              }
+            
+              // Глобальный экземпляр
+              const modalManager = new ModalManager();
+            
+              // Повторная инициализация после AJAX:
+              // function reInitModalsAfterAjax() {
+              //   modalManager.init();
+              // }
+            
             </script>
         </main>
         <footer class="footer mt134">
@@ -930,7 +1275,7 @@
                 <div class="footer_bottom">
                     <small>© 2025 Автотрейд. Все права защищены</small>
                     <a href="" class="footer_botom_politics">Соглашение на обработку персональных данных</a>
-                    <small>Разработано в <span>Artway</span></small>
+                    <small class="footer_botom_creator">Разработано в <span>Artway</span><a href="https://artway.digital/"></a></small>
                 </div>
             </div>
             <div class="footer_bg">

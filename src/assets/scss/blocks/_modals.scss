@@ -1,0 +1,400 @@
+@use "../functions" as *;
+@use "../mixins/breakpoint" as *;
+
+.modal_cars {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba($color: #c7c7c7, $alpha: 0.98);
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    display: none;
+
+    &.active {
+        display: flex;
+
+        & .overlay {
+            display: block;
+        }
+    }
+
+    &.animation {
+        opacity: 1;
+
+        & .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    & .overlay {
+        display: none;
+        border-radius: 12px;
+        min-width: 674px;
+        min-height: 258px;
+        background: #fff;
+        position: relative;
+        padding: 55px 50px 25px;
+        opacity: 0;
+        transition: all 0.3s linear;
+        transform: translateY(30%);
+
+        @include haval-desc {
+            border-radius: vw(12px, $desktop);
+            min-width: vw(664px, $desktop);
+            min-height: vw(258px, $desktop);
+            padding: vw(55px, $desktop) vw(50px, $desktop) vw(25px, $desktop);
+        }
+
+        @include tablet{
+            border-radius: vw(12px, $tablet);
+            min-width: vw(674px, $tablet);
+            min-height: vw(258px, $tablet);
+            padding: vw(55px, $tablet) vw(50px, $tablet) vw(25px, $tablet);
+        }
+
+        @include mobile{
+            min-width: unset;
+            max-width: 95vw;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: vw(258px, $mobile);
+            padding: vw(27px, $mobile) vw(20px, $mobile) vw(13px, $mobile);
+        }
+    }
+}
+
+.modal_cars_top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    transform: translate3d(-50%, -60%, 0);
+    width: 608px;
+    height: 204px;
+
+    @include haval-desc {
+        width: vw(608px, $desktop);
+        height: vw(204px, $desktop);
+    }
+
+    @include tablet{
+        width: vw(674px, $tablet);
+        height: vw(375px, $tablet);
+    }
+
+    @include mobile{
+        width: vw(328px, $mobile);
+        height: vw(110px, $mobile);
+    }
+
+    & img {
+        width: 608px;
+        height: 204px;
+        object-fit: contain;    
+        object-position: center;
+
+        @include haval-desc {
+            width: vw(608px, $desktop);
+            height: vw(204px, $desktop);
+        }
+
+        @include tablet{
+            width: vw(674px, $tablet);
+            height: vw(375px, $tablet);
+        }
+        @include mobile{
+            width: vw(328px, $mobile);
+            height: vw(110px, $mobile);
+        }
+    }
+}
+
+.modal_car_title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 115%;
+    color: #1d1f20;
+    text-align: center;
+    margin-bottom: 18px;
+    width: 100%;
+
+    @include haval-desc {
+        font-size: vw(24px, $desktop);
+        margin-bottom: vw(18px, $desktop);
+    }
+
+    @include tablet{
+        font-size: vw(24px, $tablet);
+        margin-bottom: vw(18px, $tablet);
+    }
+
+    @include mobile{
+        font-size: vw(18px, $mobile);
+        margin-bottom: vw(5px, $mobile);
+    }
+}
+
+.modal_cars_bottom {
+    & .flex-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 24px;
+        align-items: center;
+
+        &>span{
+            width: 100%;
+
+            & .project_input{
+                width: 100%;
+            }
+        }
+
+        @include haval-desc {
+            gap: vw(20px, $desktop);
+            margin-bottom: vw(24px, $desktop);
+        }
+        @include tablet{
+            gap: vw(20px, $tablet);
+            margin-bottom: vw(24px, $tablet);
+        }
+
+        @include mobile{
+            flex-direction: column;
+            gap: vw(12px, $mobile);
+            margin-bottom: vw(12px, $mobile);
+        }
+    }
+
+    & .flex-column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 376px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 12px;
+
+        @include haval-desc {
+            max-width: vw(376px, $desktop);
+            gap: vw(12px, $desktop);
+        }
+
+        @include tablet{
+            max-width: vw(376px, $tablet);
+            gap: vw(12px, $tablet);
+        }
+
+        @include mobile{
+            max-width: 100%;
+            gap: vw(7px, $mobile);
+        }
+    }
+
+    & .project_submit {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+.modal_cars_accept_row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    @include haval-desc {
+        gap: vw(8px, $desktop);
+    }
+
+    @include tablet{
+        gap: vw(8px, $tablet);
+    }
+
+    @include mobile{
+        gap: vw(4px, $mobile);
+        align-items: flex-start;
+    }
+
+    & span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #bdc3c6;
+
+        @include haval-desc {
+            font-size: vw(12px, $desktop);
+        }
+
+        @include tablet{
+            font-size: vw(12px, $tablet);
+        }
+        @include mobile{
+            font-size: vw(11px, $mobile);
+        }
+    }
+
+    & a {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        transition: color 0.3s linear;
+
+        @media(hover:hover) {
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+
+.modal_cars_accept {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+
+    @include haval-desc {
+        width: vw(12px, $desktop);
+        height: vw(12px, $desktop);
+    }
+
+    @include tablet{
+        width: vw(12px, $tablet);
+        height: vw(12px, $tablet);
+    }
+
+    @include mobile{
+        width: vw(12px, $mobile);
+        height: vw(12px, $mobile);
+    }
+}
+
+/* скрываем стандартный чекбокс */
+.modal_cars_accept input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+/* внешний квадрат */
+.modal_cars_accept::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(98, 105, 112, 0.2);
+    border-radius: 2px;
+    box-sizing: border-box;
+    background: #fff;
+
+    @include haval-desc {
+        width: vw(12px, $desktop);
+        height: vw(12px, $desktop);
+        border-radius: vw(2px, $desktop);
+    }
+
+    @include tablet{
+        width: vw(12px, $tablet);
+        height: vw(12px, $tablet);
+        border-radius: vw(2px, $tablet);
+    }
+
+    @include mobile{
+        width: vw(12px, $mobile);
+        height: vw(12px, $mobile);
+        border-radius: vw(2px, $mobile);
+    }
+}
+
+/* внутренний квадратик — по центру */
+.modal_cars_accept::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: #00cabf;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    @include haval-desc {
+        top: vw(3px, $desktop);
+        left: vw(3px, $desktop);
+        width: vw(6px, $desktop);
+        height: vw(6px, $desktop);
+        border-radius: vw(1px, $desktop);
+    }
+
+    @include tablet{
+        top: vw(3px, $tablet);
+        left: vw(3px, $tablet);
+        width: vw(6px, $tablet);
+        height: vw(6px, $tablet);
+        border-radius: vw(1px, $tablet);
+    }
+
+    @include mobile{
+        top: vw(3px, $mobile);
+        left: vw(3px, $mobile);
+        width: vw(6px, $mobile);
+        height: vw(6px, $mobile);
+        border-radius: vw(1px, $mobile);
+    }
+}
+
+.modal_cars_accept_row:has(.project_checkbox:checked) {
+    & .modal_cars_accept::after {
+        opacity: 1;
+    }
+}
+
+.modal_close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transform: translate3d(100%, -100%, 0);
+    cursor: pointer;
+    transition: transform 0.3s linear;
+
+    @include tablet{
+        transform: translate3d(80%, -100%, 0);
+    }
+    
+    @include mobile{
+        transform: translate3d(0%, -200%, 0);
+    }
+
+    @media(hover:hover) {
+        &:hover {
+            transform: translate3d(100%, -100%, 0) scale(1.1);
+
+            @include tablet{
+                transform: translate3d(80%, -100%, 0) scale(1.1);
+            }
+
+            @include mobile{
+                transform: translate3d(0%, -200%, 0) scale(1.1);
+            }
+        }
+    }
+}
