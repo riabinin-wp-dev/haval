@@ -860,10 +860,10 @@
                         Подобрать комплектацию
                       </dd>
                     </dl>
-                    <div class="img-wrap">
+                    <!-- <div class="img-wrap">
                       <img src="./assets/images/modal/Без имени-1 1.png" alt="">
             
-                    </div>
+                    </div> -->
                     <!-- slider -->
             
                     <!-- slider -->
@@ -1011,40 +1011,40 @@
             
                 function initSwiper(element) {
                   // Создаем HTML для слайдера
-                  // <div class="swiper automodal-swiper swiper-container mySwiper2">
-                  //   <div class="swiper-wrapper">
-                  //     <div class="swiper-slide swiper_automodal_main">
-                  //       <img src="./assets/images/modal/Без имени-1 1.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide swiper_automodal_main">
-                  //       <img src="./assets/images/modal/Rectangle 301.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide swiper_automodal_main">
-                  //       <img src="./assets/images/modal/Rectangle 302.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide swiper_automodal_main">
-                  //       <img src="./assets/images/modal/Rectangle 303.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide">
-                  //       <img src="./assets/images/modal/Rectangle 300.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide">
-                  //       <img src="./assets/images/modal/Rectangle 301.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide">
-                  //       <img src="./assets/images/modal/Rectangle 302.png" alt="">
-                  //     </div>
-                  //     <div class="swiper-slide">
-                  //       <img src="./assets/images/modal/Rectangle 303.png" alt="">
-                  //     </div>
-                  //   </div>
-            
-                  // </div>
                   const sliderHTML = `
-                    <div class="swiper_cars_inner">
+                  <div class="swiper automodal-swiper swiper-container mySwiper2">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide swiper_automodal_main">
+                        <img src="./assets/images/modal/Без имени-1 1.png" alt="">
+                      </div>
+                      <div class="swiper-slide swiper_automodal_main">
+                        <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                      </div>
+                      <div class="swiper-slide swiper_automodal_main">
+                        <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                      </div>
+                      <div class="swiper-slide swiper_automodal_main">
+                        <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./assets/images/modal/Rectangle 300.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./assets/images/modal/Rectangle 301.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./assets/images/modal/Rectangle 302.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./assets/images/modal/Rectangle 303.png" alt="">
+                      </div>
+                    </div>
             
+                  </div>
+                  <div class="swiper_cars_inner">
                     
-                      <div class="swiper_bottom">
+                    
+                    <div class="swiper_bottom">
                         <div class="swiper-button-prev thumbs-prev">
                           <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1105,22 +1105,22 @@
                       nextEl: ".swiper-button-next",
                       prevEl: ".swiper-button-prev",
                     },
-                    // freeMode: true,
-                    // watchSlidesVisibility: true,
-                    // watchSlidesProgress: true,
+                    freeMode: true,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
                   });
-                  // var swiper2 = new Swiper(".mySwiper2", {
-                  //   spaceBetween: 0,
-                  //   navigation: {
-                  //     nextEl: ".swiper-button-next",
-                  //     prevEl: ".swiper-button-prev",
-                  //   },
-                  //   thumbs: {
-                  //     swiper: swiper,
-                  //   },
-                  // });
+                  var swiper2 = new Swiper(".mySwiper2", {
+                    spaceBetween: 0,
+                    navigation: {
+                      nextEl: ".swiper-button-next",
+                      prevEl: ".swiper-button-prev",
+                    },
+                    thumbs: {
+                      swiper: swiper,
+                    },
+                  });
                   // И связываем основной слайдер с миниатюрами
-                  // mainSwiper.controller.control = thumbSwiper;
+                  mainSwiper.controller.control = thumbSwiper;
                 }
               }
             
